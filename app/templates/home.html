@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-4 fade-in">
+    <!-- Enterprise Cloud Style Hero -->
+    <div class="row align-items-center mb-5 pb-5 fade-in" style="min-height: 55vh; padding-top: 3rem;">
+        
+        <!-- Left Side: Cloud Content -->
+        <div class="col-lg-6 pe-lg-5 mb-5 mb-lg-0 text-start">
+            <div class="text-primary fw-bold mb-3" style="font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase;">
+                Machine Learning Infrastructure
+            </div>
+            <h1 class="fw-bolder text-dark mb-4 responsive-heading" style="letter-spacing: -1px; line-height: 1.1;">
+                Human Development Index Predictor
+            </h1>
+            <p class="lead text-muted mb-5" style="font-size: 1.15rem; line-height: 1.6; max-width: 90%;">
+                An enterprise-grade deterministic regression pipeline. Evaluate global well-being metrics with real-time, highly accurate machine learning endpoints.
+            </p>
+            <div class="d-flex flex-column flex-sm-row gap-3">
+                <a href="{{ url_for('predict') }}" class="btn btn-primary btn-lg rounded-3 px-5 py-3 shadow-sm" style="font-weight: 600;">
+                    Launch Console
+                </a>
+                <a href="{{ url_for('portal') }}" class="btn btn-outline-secondary btn-lg rounded-3 px-5 py-3 bg-white" style="font-weight: 600;">
+                    Documentation
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Side: Developer Code Terminal -->
+        <div class="col-lg-6">
+            <div class="rounded-4 shadow-lg overflow-hidden bg-dark text-start slide-up" style="border: 1px solid #444;">
+                <div class="px-3 py-2 d-flex align-items-center border-bottom" style="background-color: #1a1a1a; border-color: #333 !important;">
+                    <div class="rounded-circle bg-danger me-2" style="width: 12px; height: 12px;"></div>
+                    <div class="rounded-circle bg-warning me-2" style="width: 12px; height: 12px;"></div>
+                    <div class="rounded-circle bg-success" style="width: 12px; height: 12px;"></div>
+                    <span class="text-secondary ms-3 small font-monospace">predict_hdi.py</span>
+                </div>
+                <div class="p-4 p-md-5 font-monospace overflow-auto" style="background-color: #242424; color: #e6e6e6; line-height: 1.7; font-size: 0.85rem; max-height: 400px; white-space: nowrap;">
+                    <span style="color: #c678dd;">import</span> hdi_model<br>
+                    <span style="color: #c678dd;">import</span> pandas <span style="color: #c678dd;">as</span> pd<br><br>
+                    
+                    <span style="color: #5c6370; font-style: italic;"># Load deterministic ML pipeline</span><br>
+                    model = hdi_model.load_pipeline(<span style="color: #98c379;">'models/HDI.pkl'</span>)<br><br>
+                    
+                    input_data = pd.DataFrame([{<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #98c379;">'LifeExpectancy'</span>: <span style="color: #d19a66;">82.5</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #98c379;">'ExpectedSchooling'</span>: <span style="color: #d19a66;">17.2</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #98c379;">'MeanSchooling'</span>: <span style="color: #d19a66;">13.0</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #98c379;">'GrossNationalIncome'</span>: <span style="color: #d19a66;">65000</span><br>
+                    }])<br><br>
+                    
+                    prediction = model.predict(input_data)<br>
+                    <span style="color: #61afef;">print</span>(<span style="color: #98c379;">f"Predicted HDI: </span>{prediction[<span style="color: #d19a66;">0</span>]:<span style="color: #d19a66;">.3f</span>}<span style="color: #98c379;">"</span>)<br>
+                    <br>
+                    <span style="color: #5c6370;">>>> Predicted HDI: 0.945 (Very High)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bento Grid Features -->
+    <div class="row g-4 mb-5 fade-in">
+        <div class="col-md-4">
+            <div class="bento-card h-100 text-center">
+                <div class="icon-container bg-light-blue mb-4">
+                    <i class="fa-solid fa-heart-pulse fa-xl"></i>
+                </div>
+                <h4 class="mb-3">Health Profile</h4>
+                <p class="text-muted mb-0 small">Measures life expectancy at birth, capturing population wellness and longevity indicators.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="bento-card h-100 text-center">
+                <div class="icon-container bg-light-blue mb-4">
+                    <i class="fa-solid fa-graduation-cap fa-xl"></i>
+                </div>
+                <h4 class="mb-3">Education Metrics</h4>
+                <p class="text-muted mb-0 small">Consolidates expected years of schooling alongside mean educational attainment for adults.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="bento-card h-100 text-center">
+                <div class="icon-container bg-light-blue mb-4">
+                    <i class="fa-solid fa-money-bill-trend-up fa-xl"></i>
+                </div>
+                <h4 class="mb-3">Standard of Living</h4>
+                <p class="text-muted mb-0 small">Evaluates economic parity through Gross National Income (GNI) per capita (PPP).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Model Performance Table -->
+    <div class="bento-card mb-5 fade-in">
+        <h4 class="mb-2">Model Performance & Evaluation Analysis</h4>
+        <p class="text-muted mb-4 small">Detailed performance benchmarks of the machine learning regressor.</p>
+        
+        <div class="table-responsive">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th>Model Classifier</th>
+                        <th>R² Score</th>
+                        <th>MAE</th>
+                        <th>MSE</th>
+                        <th>RMSE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fw-bold">Linear Regression (Optimized)</td>
+                        <td><span class="badge bg-success bg-opacity-10 text-success px-2 py-1">0.9986</span></td>
+                        <td>0.0038</td>
+                        <td>0.0000</td>
+                        <td>0.0060</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold text-muted">Baseline (Standard Scaled)</td>
+                        <td class="text-muted">0.9986</td>
+                        <td class="text-muted">0.0038</td>
+                        <td class="text-muted">0.0000</td>
+                        <td class="text-muted">0.0060</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="alert bg-light mt-4 border-0 rounded-4 p-4 text-muted small">
+            <h6 class="fw-bold text-dark">Why does Linear Regression score ~1.00?</h6>
+            Because the HDI target label is synthesized using a deterministic rule-based heuristic (it is a geometric mean of normalized component indices), linear models are able to reconstruct the mathematical mapping almost perfectly on our cleaned dataset. Standard scaling does not modify the structural relationships, yielding identical performance.
+        </div>
+    </div>
+</div>
+{% endblock %}

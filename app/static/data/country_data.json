@@ -1,0 +1,1220 @@
+{
+    "Afghanistan": {
+        "life_expectancy": 62.9,
+        "expec_yr_school": 10.7,
+        "mean_yr_school": 2.5,
+        "gross_inc_percap": 1335
+    },
+    "Albania": {
+        "life_expectancy": 76.8,
+        "expec_yr_school": 14.5,
+        "mean_yr_school": 10.1,
+        "gross_inc_percap": 15293
+    },
+    "Algeria": {
+        "life_expectancy": 77.1,
+        "expec_yr_school": 15.5,
+        "mean_yr_school": 7.0,
+        "gross_inc_percap": 10978
+    },
+    "Andorra": {
+        "life_expectancy": 83.6,
+        "expec_yr_school": 12.8,
+        "mean_yr_school": 11.6,
+        "gross_inc_percap": 54233
+    },
+    "Angola": {
+        "life_expectancy": 61.9,
+        "expec_yr_school": 12.2,
+        "mean_yr_school": 5.8,
+        "gross_inc_percap": 5327
+    },
+    "Antigua and Barbuda": {
+        "life_expectancy": 79.2,
+        "expec_yr_school": 15.5,
+        "mean_yr_school": 10.5,
+        "gross_inc_percap": 18783
+    },
+    "Argentina": {
+        "life_expectancy": 76.1,
+        "expec_yr_school": 19.0,
+        "mean_yr_school": 11.1,
+        "gross_inc_percap": 22047
+    },
+    "Armenia": {
+        "life_expectancy": 73.4,
+        "expec_yr_school": 14.4,
+        "mean_yr_school": 11.3,
+        "gross_inc_percap": 15388
+    },
+    "Australia": {
+        "life_expectancy": 83.6,
+        "expec_yr_school": 21.1,
+        "mean_yr_school": 12.7,
+        "gross_inc_percap": 49257
+    },
+    "Austria": {
+        "life_expectancy": 82.4,
+        "expec_yr_school": 16.4,
+        "mean_yr_school": 12.3,
+        "gross_inc_percap": 56529
+    },
+    "Azerbaijan": {
+        "life_expectancy": 73.5,
+        "expec_yr_school": 12.7,
+        "mean_yr_school": 10.6,
+        "gross_inc_percap": 15018
+    },
+    "Bahamas": {
+        "life_expectancy": 74.4,
+        "expec_yr_school": 11.9,
+        "mean_yr_school": 12.7,
+        "gross_inc_percap": 32534
+    },
+    "Bahrain": {
+        "life_expectancy": 79.2,
+        "expec_yr_school": 16.3,
+        "mean_yr_school": 11.0,
+        "gross_inc_percap": 48731
+    },
+    "Bangladesh": {
+        "life_expectancy": 73.7,
+        "expec_yr_school": 11.9,
+        "mean_yr_school": 7.4,
+        "gross_inc_percap": 6511
+    },
+    "Barbados": {
+        "life_expectancy": 77.7,
+        "expec_yr_school": 16.5,
+        "mean_yr_school": 9.9,
+        "gross_inc_percap": 14810
+    },
+    "Belarus": {
+        "life_expectancy": 73.2,
+        "expec_yr_school": 14.0,
+        "mean_yr_school": 12.2,
+        "gross_inc_percap": 18425
+    },
+    "Belgium": {
+        "life_expectancy": 82.3,
+        "expec_yr_school": 18.9,
+        "mean_yr_school": 12.5,
+        "gross_inc_percap": 53644
+    },
+    "Belize": {
+        "life_expectancy": 71.0,
+        "expec_yr_school": 12.4,
+        "mean_yr_school": 8.8,
+        "gross_inc_percap": 9242
+    },
+    "Benin": {
+        "life_expectancy": 60.0,
+        "expec_yr_school": 10.3,
+        "mean_yr_school": 3.1,
+        "gross_inc_percap": 3406
+    },
+    "Bhutan": {
+        "life_expectancy": 72.2,
+        "expec_yr_school": 13.1,
+        "mean_yr_school": 5.8,
+        "gross_inc_percap": 10624
+    },
+    "Bolivia (Plurinational State of)": {
+        "life_expectancy": 64.9,
+        "expec_yr_school": 15.0,
+        "mean_yr_school": 9.8,
+        "gross_inc_percap": 7987
+    },
+    "Bosnia and Herzegovina": {
+        "life_expectancy": 75.3,
+        "expec_yr_school": 13.3,
+        "mean_yr_school": 10.5,
+        "gross_inc_percap": 16571
+    },
+    "Botswana": {
+        "life_expectancy": 65.9,
+        "expec_yr_school": 11.4,
+        "mean_yr_school": 10.4,
+        "gross_inc_percap": 14841
+    },
+    "Brazil": {
+        "life_expectancy": 73.4,
+        "expec_yr_school": 15.6,
+        "mean_yr_school": 8.3,
+        "gross_inc_percap": 14615
+    },
+    "Brunei Darussalam": {
+        "life_expectancy": 74.6,
+        "expec_yr_school": 13.7,
+        "mean_yr_school": 9.2,
+        "gross_inc_percap": 59245
+    },
+    "Bulgaria": {
+        "life_expectancy": 71.5,
+        "expec_yr_school": 13.9,
+        "mean_yr_school": 11.4,
+        "gross_inc_percap": 25920
+    },
+    "Burkina Faso": {
+        "life_expectancy": 59.8,
+        "expec_yr_school": 8.1,
+        "mean_yr_school": 2.3,
+        "gross_inc_percap": 2036
+    },
+    "Burundi": {
+        "life_expectancy": 62.0,
+        "expec_yr_school": 10.0,
+        "mean_yr_school": 3.3,
+        "gross_inc_percap": 712
+    },
+    "Cabo Verde": {
+        "life_expectancy": 74.7,
+        "expec_yr_school": 11.5,
+        "mean_yr_school": 6.1,
+        "gross_inc_percap": 7601
+    },
+    "Cambodia": {
+        "life_expectancy": 69.9,
+        "expec_yr_school": 11.6,
+        "mean_yr_school": 5.2,
+        "gross_inc_percap": 4291
+    },
+    "Cameroon": {
+        "life_expectancy": 61.0,
+        "expec_yr_school": 13.4,
+        "mean_yr_school": 6.5,
+        "gross_inc_percap": 3681
+    },
+    "Canada": {
+        "life_expectancy": 82.8,
+        "expec_yr_school": 16.0,
+        "mean_yr_school": 13.9,
+        "gross_inc_percap": 48444
+    },
+    "Central African Republic": {
+        "life_expectancy": 54.5,
+        "expec_yr_school": 7.3,
+        "mean_yr_school": 4.0,
+        "gross_inc_percap": 869
+    },
+    "Chad": {
+        "life_expectancy": 53.0,
+        "expec_yr_school": 8.2,
+        "mean_yr_school": 2.3,
+        "gross_inc_percap": 1388
+    },
+    "Chile": {
+        "life_expectancy": 79.5,
+        "expec_yr_school": 16.8,
+        "mean_yr_school": 11.1,
+        "gross_inc_percap": 24430
+    },
+    "China": {
+        "life_expectancy": 78.6,
+        "expec_yr_school": 15.2,
+        "mean_yr_school": 8.1,
+        "gross_inc_percap": 18024
+    },
+    "Colombia": {
+        "life_expectancy": 73.7,
+        "expec_yr_school": 14.4,
+        "mean_yr_school": 8.9,
+        "gross_inc_percap": 15013
+    },
+    "Comoros": {
+        "life_expectancy": 63.7,
+        "expec_yr_school": 13.0,
+        "mean_yr_school": 6.2,
+        "gross_inc_percap": 3260
+    },
+    "Congo": {
+        "life_expectancy": 63.1,
+        "expec_yr_school": 12.4,
+        "mean_yr_school": 8.3,
+        "gross_inc_percap": 2902
+    },
+    "Congo (Democratic Republic of the)": {
+        "life_expectancy": 59.7,
+        "expec_yr_school": 9.6,
+        "mean_yr_school": 7.2,
+        "gross_inc_percap": 1080
+    },
+    "Costa Rica": {
+        "life_expectancy": 77.3,
+        "expec_yr_school": 16.1,
+        "mean_yr_school": 8.8,
+        "gross_inc_percap": 20248
+    },
+    "C\u00f4te d'Ivoire": {
+        "life_expectancy": 58.9,
+        "expec_yr_school": 10.1,
+        "mean_yr_school": 4.2,
+        "gross_inc_percap": 5376
+    },
+    "Croatia": {
+        "life_expectancy": 79.2,
+        "expec_yr_school": 15.6,
+        "mean_yr_school": 12.3,
+        "gross_inc_percap": 34323
+    },
+    "Cuba": {
+        "life_expectancy": 78.2,
+        "expec_yr_school": 14.5,
+        "mean_yr_school": 10.5,
+        "gross_inc_percap": 7953
+    },
+    "Cyprus": {
+        "life_expectancy": 81.9,
+        "expec_yr_school": 16.2,
+        "mean_yr_school": 12.4,
+        "gross_inc_percap": 40136
+    },
+    "Czechia": {
+        "life_expectancy": 78.1,
+        "expec_yr_school": 16.3,
+        "mean_yr_school": 12.9,
+        "gross_inc_percap": 39944
+    },
+    "Denmark": {
+        "life_expectancy": 81.9,
+        "expec_yr_school": 18.8,
+        "mean_yr_school": 13.0,
+        "gross_inc_percap": 62018
+    },
+    "Djibouti": {
+        "life_expectancy": 62.9,
+        "expec_yr_school": 8.0,
+        "mean_yr_school": 3.9,
+        "gross_inc_percap": 4874
+    },
+    "Dominica": {
+        "life_expectancy": 73.0,
+        "expec_yr_school": 13.6,
+        "mean_yr_school": 9.2,
+        "gross_inc_percap": 12467
+    },
+    "Dominican Republic": {
+        "life_expectancy": 74.2,
+        "expec_yr_school": 13.6,
+        "mean_yr_school": 9.2,
+        "gross_inc_percap": 18653
+    },
+    "Ecuador": {
+        "life_expectancy": 77.9,
+        "expec_yr_school": 14.9,
+        "mean_yr_school": 9.0,
+        "gross_inc_percap": 10693
+    },
+    "Egypt": {
+        "life_expectancy": 70.2,
+        "expec_yr_school": 12.9,
+        "mean_yr_school": 9.8,
+        "gross_inc_percap": 12360
+    },
+    "El Salvador": {
+        "life_expectancy": 71.5,
+        "expec_yr_school": 11.9,
+        "mean_yr_school": 7.2,
+        "gross_inc_percap": 8886
+    },
+    "Equatorial Guinea": {
+        "life_expectancy": 61.2,
+        "expec_yr_school": 12.1,
+        "mean_yr_school": 8.3,
+        "gross_inc_percap": 10662
+    },
+    "Eritrea": {
+        "life_expectancy": 66.6,
+        "expec_yr_school": 7.3,
+        "mean_yr_school": 5.1,
+        "gross_inc_percap": 1957
+    },
+    "Estonia": {
+        "life_expectancy": 79.2,
+        "expec_yr_school": 15.9,
+        "mean_yr_school": 13.5,
+        "gross_inc_percap": 37151
+    },
+    "Eswatini (Kingdom of)": {
+        "life_expectancy": 56.4,
+        "expec_yr_school": 14.9,
+        "mean_yr_school": 5.7,
+        "gross_inc_percap": 8391
+    },
+    "Ethiopia": {
+        "life_expectancy": 65.6,
+        "expec_yr_school": 9.9,
+        "mean_yr_school": 2.4,
+        "gross_inc_percap": 2368
+    },
+    "Fiji": {
+        "life_expectancy": 68.3,
+        "expec_yr_school": 13.8,
+        "mean_yr_school": 10.4,
+        "gross_inc_percap": 11233
+    },
+    "Finland": {
+        "life_expectancy": 82.4,
+        "expec_yr_school": 19.2,
+        "mean_yr_school": 12.9,
+        "gross_inc_percap": 49522
+    },
+    "France": {
+        "life_expectancy": 83.2,
+        "expec_yr_school": 16.0,
+        "mean_yr_school": 11.7,
+        "gross_inc_percap": 47378
+    },
+    "Gabon": {
+        "life_expectancy": 65.7,
+        "expec_yr_school": 12.4,
+        "mean_yr_school": 9.6,
+        "gross_inc_percap": 11194
+    },
+    "Gambia": {
+        "life_expectancy": 62.9,
+        "expec_yr_school": 9.0,
+        "mean_yr_school": 4.5,
+        "gross_inc_percap": 2089
+    },
+    "Georgia": {
+        "life_expectancy": 71.6,
+        "expec_yr_school": 16.7,
+        "mean_yr_school": 12.7,
+        "gross_inc_percap": 15952
+    },
+    "Germany": {
+        "life_expectancy": 81.0,
+        "expec_yr_school": 17.3,
+        "mean_yr_school": 14.3,
+        "gross_inc_percap": 55340
+    },
+    "Ghana": {
+        "life_expectancy": 63.9,
+        "expec_yr_school": 11.6,
+        "mean_yr_school": 6.4,
+        "gross_inc_percap": 5380
+    },
+    "Greece": {
+        "life_expectancy": 80.6,
+        "expec_yr_school": 20.0,
+        "mean_yr_school": 11.4,
+        "gross_inc_percap": 31381
+    },
+    "Grenada": {
+        "life_expectancy": 75.3,
+        "expec_yr_school": 16.6,
+        "mean_yr_school": 9.9,
+        "gross_inc_percap": 13593
+    },
+    "Guatemala": {
+        "life_expectancy": 68.7,
+        "expec_yr_school": 10.8,
+        "mean_yr_school": 5.7,
+        "gross_inc_percap": 8996
+    },
+    "Guinea": {
+        "life_expectancy": 59.0,
+        "expec_yr_school": 10.2,
+        "mean_yr_school": 2.4,
+        "gross_inc_percap": 2404
+    },
+    "Guinea-Bissau": {
+        "life_expectancy": 59.9,
+        "expec_yr_school": 10.5,
+        "mean_yr_school": 3.7,
+        "gross_inc_percap": 1879
+    },
+    "Guyana": {
+        "life_expectancy": 66.0,
+        "expec_yr_school": 13.0,
+        "mean_yr_school": 8.6,
+        "gross_inc_percap": 35782
+    },
+    "Haiti": {
+        "life_expectancy": 63.7,
+        "expec_yr_school": 11.1,
+        "mean_yr_school": 5.6,
+        "gross_inc_percap": 2801
+    },
+    "Honduras": {
+        "life_expectancy": 70.7,
+        "expec_yr_school": 10.0,
+        "mean_yr_school": 7.3,
+        "gross_inc_percap": 5271
+    },
+    "Hong Kong, China (SAR)": {
+        "life_expectancy": 84.3,
+        "expec_yr_school": 17.8,
+        "mean_yr_school": 12.3,
+        "gross_inc_percap": 62485
+    },
+    "Hungary": {
+        "life_expectancy": 75.0,
+        "expec_yr_school": 15.1,
+        "mean_yr_school": 12.2,
+        "gross_inc_percap": 34195
+    },
+    "Iceland": {
+        "life_expectancy": 82.8,
+        "expec_yr_school": 19.1,
+        "mean_yr_school": 13.8,
+        "gross_inc_percap": 54688
+    },
+    "India": {
+        "life_expectancy": 67.7,
+        "expec_yr_school": 12.6,
+        "mean_yr_school": 6.6,
+        "gross_inc_percap": 6950
+    },
+    "Indonesia": {
+        "life_expectancy": 68.2,
+        "expec_yr_school": 14.0,
+        "mean_yr_school": 8.6,
+        "gross_inc_percap": 12045
+    },
+    "Iran (Islamic Republic of)": {
+        "life_expectancy": 74.6,
+        "expec_yr_school": 14.1,
+        "mean_yr_school": 10.7,
+        "gross_inc_percap": 14770
+    },
+    "Iraq": {
+        "life_expectancy": 71.3,
+        "expec_yr_school": 12.2,
+        "mean_yr_school": 6.8,
+        "gross_inc_percap": 9091
+    },
+    "Ireland": {
+        "life_expectancy": 82.0,
+        "expec_yr_school": 19.1,
+        "mean_yr_school": 11.7,
+        "gross_inc_percap": 78952
+    },
+    "Israel": {
+        "life_expectancy": 82.6,
+        "expec_yr_school": 15.0,
+        "mean_yr_school": 13.4,
+        "gross_inc_percap": 43588
+    },
+    "Italy": {
+        "life_expectancy": 84.1,
+        "expec_yr_school": 16.7,
+        "mean_yr_school": 10.7,
+        "gross_inc_percap": 44284
+    },
+    "Jamaica": {
+        "life_expectancy": 70.6,
+        "expec_yr_school": 12.5,
+        "mean_yr_school": 9.2,
+        "gross_inc_percap": 9694
+    },
+    "Japan": {
+        "life_expectancy": 84.8,
+        "expec_yr_school": 15.5,
+        "mean_yr_school": 12.7,
+        "gross_inc_percap": 43643
+    },
+    "Jordan": {
+        "life_expectancy": 74.2,
+        "expec_yr_school": 12.6,
+        "mean_yr_school": 10.4,
+        "gross_inc_percap": 9294
+    },
+    "Kazakhstan": {
+        "life_expectancy": 69.5,
+        "expec_yr_school": 14.8,
+        "mean_yr_school": 12.4,
+        "gross_inc_percap": 22586
+    },
+    "Kenya": {
+        "life_expectancy": 62.1,
+        "expec_yr_school": 11.4,
+        "mean_yr_school": 7.7,
+        "gross_inc_percap": 4807
+    },
+    "Kiribati": {
+        "life_expectancy": 67.7,
+        "expec_yr_school": 11.8,
+        "mean_yr_school": 9.1,
+        "gross_inc_percap": 3440
+    },
+    "Korea (Republic of)": {
+        "life_expectancy": 84.0,
+        "expec_yr_school": 16.5,
+        "mean_yr_school": 12.6,
+        "gross_inc_percap": 46026
+    },
+    "Kuwait": {
+        "life_expectancy": 80.3,
+        "expec_yr_school": 15.7,
+        "mean_yr_school": 7.4,
+        "gross_inc_percap": 56729
+    },
+    "Kyrgyzstan": {
+        "life_expectancy": 70.5,
+        "expec_yr_school": 13.0,
+        "mean_yr_school": 12.0,
+        "gross_inc_percap": 4781
+    },
+    "Lao People's Democratic Republic": {
+        "life_expectancy": 69.0,
+        "expec_yr_school": 10.2,
+        "mean_yr_school": 5.9,
+        "gross_inc_percap": 7744
+    },
+    "Latvia": {
+        "life_expectancy": 75.9,
+        "expec_yr_school": 16.6,
+        "mean_yr_school": 13.3,
+        "gross_inc_percap": 32082
+    },
+    "Lebanon": {
+        "life_expectancy": 74.4,
+        "expec_yr_school": 12.1,
+        "mean_yr_school": 8.6,
+        "gross_inc_percap": 12313
+    },
+    "Lesotho": {
+        "life_expectancy": 53.0,
+        "expec_yr_school": 11.1,
+        "mean_yr_school": 7.5,
+        "gross_inc_percap": 2708
+    },
+    "Liberia": {
+        "life_expectancy": 61.1,
+        "expec_yr_school": 10.5,
+        "mean_yr_school": 5.3,
+        "gross_inc_percap": 1330
+    },
+    "Libya": {
+        "life_expectancy": 72.2,
+        "expec_yr_school": 14.0,
+        "mean_yr_school": 7.8,
+        "gross_inc_percap": 19751
+    },
+    "Lithuania": {
+        "life_expectancy": 74.3,
+        "expec_yr_school": 16.4,
+        "mean_yr_school": 13.5,
+        "gross_inc_percap": 38131
+    },
+    "Luxembourg": {
+        "life_expectancy": 82.6,
+        "expec_yr_school": 14.2,
+        "mean_yr_school": 13.0,
+        "gross_inc_percap": 78554
+    },
+    "Madagascar": {
+        "life_expectancy": 65.2,
+        "expec_yr_school": 9.2,
+        "mean_yr_school": 4.6,
+        "gross_inc_percap": 1463
+    },
+    "Malawi": {
+        "life_expectancy": 62.9,
+        "expec_yr_school": 11.5,
+        "mean_yr_school": 5.2,
+        "gross_inc_percap": 1432
+    },
+    "Malaysia": {
+        "life_expectancy": 76.3,
+        "expec_yr_school": 12.9,
+        "mean_yr_school": 10.7,
+        "gross_inc_percap": 27295
+    },
+    "Maldives": {
+        "life_expectancy": 80.8,
+        "expec_yr_school": 12.2,
+        "mean_yr_school": 7.8,
+        "gross_inc_percap": 18846
+    },
+    "Mali": {
+        "life_expectancy": 59.4,
+        "expec_yr_school": 7.0,
+        "mean_yr_school": 1.6,
+        "gross_inc_percap": 2043
+    },
+    "Malta": {
+        "life_expectancy": 83.7,
+        "expec_yr_school": 15.9,
+        "mean_yr_school": 12.2,
+        "gross_inc_percap": 44464
+    },
+    "Marshall Islands": {
+        "life_expectancy": 65.1,
+        "expec_yr_school": 16.4,
+        "mean_yr_school": 12.8,
+        "gross_inc_percap": 6855
+    },
+    "Mauritania": {
+        "life_expectancy": 64.7,
+        "expec_yr_school": 8.1,
+        "mean_yr_school": 4.8,
+        "gross_inc_percap": 5343
+    },
+    "Mauritius": {
+        "life_expectancy": 74.0,
+        "expec_yr_school": 14.6,
+        "mean_yr_school": 10.0,
+        "gross_inc_percap": 23251
+    },
+    "Mexico": {
+        "life_expectancy": 74.8,
+        "expec_yr_school": 14.5,
+        "mean_yr_school": 9.2,
+        "gross_inc_percap": 19138
+    },
+    "Micronesia (Federated States of)": {
+        "life_expectancy": 70.9,
+        "expec_yr_school": 12.6,
+        "mean_yr_school": 7.3,
+        "gross_inc_percap": 3709
+    },
+    "Moldova (Republic of)": {
+        "life_expectancy": 68.6,
+        "expec_yr_school": 14.9,
+        "mean_yr_school": 11.8,
+        "gross_inc_percap": 12963
+    },
+    "Mongolia": {
+        "life_expectancy": 72.7,
+        "expec_yr_school": 14.5,
+        "mean_yr_school": 9.4,
+        "gross_inc_percap": 10350
+    },
+    "Montenegro": {
+        "life_expectancy": 76.8,
+        "expec_yr_school": 15.1,
+        "mean_yr_school": 12.6,
+        "gross_inc_percap": 22513
+    },
+    "Morocco": {
+        "life_expectancy": 75.0,
+        "expec_yr_school": 14.6,
+        "mean_yr_school": 6.0,
+        "gross_inc_percap": 7954
+    },
+    "Mozambique": {
+        "life_expectancy": 59.6,
+        "expec_yr_school": 10.7,
+        "mean_yr_school": 3.9,
+        "gross_inc_percap": 1219
+    },
+    "Myanmar": {
+        "life_expectancy": 67.3,
+        "expec_yr_school": 12.1,
+        "mean_yr_school": 6.5,
+        "gross_inc_percap": 4037
+    },
+    "Namibia": {
+        "life_expectancy": 58.1,
+        "expec_yr_school": 11.8,
+        "mean_yr_school": 7.2,
+        "gross_inc_percap": 9200
+    },
+    "Nauru": {
+        "life_expectancy": 64.0,
+        "expec_yr_school": 12.6,
+        "mean_yr_school": 9.2,
+        "gross_inc_percap": 14938
+    },
+    "Nepal": {
+        "life_expectancy": 70.5,
+        "expec_yr_school": 12.6,
+        "mean_yr_school": 4.5,
+        "gross_inc_percap": 4025
+    },
+    "Netherlands": {
+        "life_expectancy": 82.5,
+        "expec_yr_school": 18.6,
+        "mean_yr_school": 12.6,
+        "gross_inc_percap": 57278
+    },
+    "New Zealand": {
+        "life_expectancy": 83.0,
+        "expec_yr_school": 19.7,
+        "mean_yr_school": 12.9,
+        "gross_inc_percap": 43665
+    },
+    "Nicaragua": {
+        "life_expectancy": 74.6,
+        "expec_yr_school": 12.6,
+        "mean_yr_school": 7.3,
+        "gross_inc_percap": 5426
+    },
+    "Niger": {
+        "life_expectancy": 62.1,
+        "expec_yr_school": 7.2,
+        "mean_yr_school": 1.3,
+        "gross_inc_percap": 1283
+    },
+    "Nigeria": {
+        "life_expectancy": 53.6,
+        "expec_yr_school": 10.5,
+        "mean_yr_school": 7.6,
+        "gross_inc_percap": 4754
+    },
+    "North Macedonia": {
+        "life_expectancy": 73.9,
+        "expec_yr_school": 13.0,
+        "mean_yr_school": 10.2,
+        "gross_inc_percap": 16395
+    },
+    "Norway": {
+        "life_expectancy": 83.4,
+        "expec_yr_school": 18.6,
+        "mean_yr_school": 13.1,
+        "gross_inc_percap": 69189
+    },
+    "Oman": {
+        "life_expectancy": 73.9,
+        "expec_yr_school": 13.0,
+        "mean_yr_school": 11.9,
+        "gross_inc_percap": 32967
+    },
+    "Pakistan": {
+        "life_expectancy": 66.4,
+        "expec_yr_school": 7.9,
+        "mean_yr_school": 4.4,
+        "gross_inc_percap": 5374
+    },
+    "Palau": {
+        "life_expectancy": 65.4,
+        "expec_yr_school": 17.2,
+        "mean_yr_school": 13.0,
+        "gross_inc_percap": 19343
+    },
+    "Palestine, State of": {
+        "life_expectancy": 73.4,
+        "expec_yr_school": 13.2,
+        "mean_yr_school": 9.9,
+        "gross_inc_percap": 6936
+    },
+    "Panama": {
+        "life_expectancy": 76.8,
+        "expec_yr_school": 13.2,
+        "mean_yr_school": 10.7,
+        "gross_inc_percap": 32029
+    },
+    "Papua New Guinea": {
+        "life_expectancy": 66.0,
+        "expec_yr_school": 11.1,
+        "mean_yr_school": 4.9,
+        "gross_inc_percap": 3710
+    },
+    "Paraguay": {
+        "life_expectancy": 70.5,
+        "expec_yr_school": 13.9,
+        "mean_yr_school": 8.9,
+        "gross_inc_percap": 13161
+    },
+    "Peru": {
+        "life_expectancy": 73.4,
+        "expec_yr_school": 14.8,
+        "mean_yr_school": 10.0,
+        "gross_inc_percap": 11916
+    },
+    "Philippines": {
+        "life_expectancy": 72.2,
+        "expec_yr_school": 12.8,
+        "mean_yr_school": 9.0,
+        "gross_inc_percap": 9058
+    },
+    "Poland": {
+        "life_expectancy": 77.0,
+        "expec_yr_school": 15.9,
+        "mean_yr_school": 13.2,
+        "gross_inc_percap": 35150
+    },
+    "Portugal": {
+        "life_expectancy": 82.2,
+        "expec_yr_school": 16.8,
+        "mean_yr_school": 9.6,
+        "gross_inc_percap": 35314
+    },
+    "Qatar": {
+        "life_expectancy": 76.1,
+        "expec_yr_school": 11.8,
+        "mean_yr_school": 8.7,
+        "gross_inc_percap": 80197
+    },
+    "Romania": {
+        "life_expectancy": 74.1,
+        "expec_yr_school": 14.5,
+        "mean_yr_school": 11.4,
+        "gross_inc_percap": 31641
+    },
+    "Russian Federation": {
+        "life_expectancy": 70.1,
+        "expec_yr_school": 15.7,
+        "mean_yr_school": 12.4,
+        "gross_inc_percap": 26991
+    },
+    "Rwanda": {
+        "life_expectancy": 67.1,
+        "expec_yr_school": 11.4,
+        "mean_yr_school": 4.9,
+        "gross_inc_percap": 2316
+    },
+    "Saint Kitts and Nevis": {
+        "life_expectancy": 72.0,
+        "expec_yr_school": 18.4,
+        "mean_yr_school": 10.8,
+        "gross_inc_percap": 28441
+    },
+    "Saint Lucia": {
+        "life_expectancy": 71.3,
+        "expec_yr_school": 12.7,
+        "mean_yr_school": 8.6,
+        "gross_inc_percap": 14778
+    },
+    "Saint Vincent and the Grenadines": {
+        "life_expectancy": 69.0,
+        "expec_yr_school": 16.3,
+        "mean_yr_school": 11.0,
+        "gross_inc_percap": 14049
+    },
+    "Samoa": {
+        "life_expectancy": 72.6,
+        "expec_yr_school": 12.4,
+        "mean_yr_school": 11.4,
+        "gross_inc_percap": 4970
+    },
+    "San Marino": {
+        "life_expectancy": 83.4,
+        "expec_yr_school": 12.4,
+        "mean_yr_school": 10.5,
+        "gross_inc_percap": 57686
+    },
+    "Sao Tome and Principe": {
+        "life_expectancy": 68.8,
+        "expec_yr_school": 12.7,
+        "mean_yr_school": 5.9,
+        "gross_inc_percap": 4054
+    },
+    "Saudi Arabia": {
+        "life_expectancy": 77.9,
+        "expec_yr_school": 15.2,
+        "mean_yr_school": 11.3,
+        "gross_inc_percap": 50620
+    },
+    "Senegal": {
+        "life_expectancy": 67.9,
+        "expec_yr_school": 9.1,
+        "mean_yr_school": 2.9,
+        "gross_inc_percap": 3463
+    },
+    "Serbia": {
+        "life_expectancy": 74.1,
+        "expec_yr_school": 14.5,
+        "mean_yr_school": 11.5,
+        "gross_inc_percap": 19494
+    },
+    "Seychelles": {
+        "life_expectancy": 71.7,
+        "expec_yr_school": 13.9,
+        "mean_yr_school": 11.2,
+        "gross_inc_percap": 28385
+    },
+    "Sierra Leone": {
+        "life_expectancy": 60.4,
+        "expec_yr_school": 9.0,
+        "mean_yr_school": 3.5,
+        "gross_inc_percap": 1612
+    },
+    "Singapore": {
+        "life_expectancy": 82.9,
+        "expec_yr_school": 16.8,
+        "mean_yr_school": 11.9,
+        "gross_inc_percap": 81430
+    },
+    "Slovakia": {
+        "life_expectancy": 75.3,
+        "expec_yr_school": 14.7,
+        "mean_yr_school": 13.0,
+        "gross_inc_percap": 32171
+    },
+    "Slovenia": {
+        "life_expectancy": 82.1,
+        "expec_yr_school": 17.4,
+        "mean_yr_school": 12.9,
+        "gross_inc_percap": 41586
+    },
+    "Solomon Islands": {
+        "life_expectancy": 70.7,
+        "expec_yr_school": 10.3,
+        "mean_yr_school": 5.9,
+        "gross_inc_percap": 2273
+    },
+    "Somalia": {
+        "life_expectancy": 56.1,
+        "expec_yr_school": 7.6,
+        "mean_yr_school": 1.9,
+        "gross_inc_percap": 1072
+    },
+    "South Africa": {
+        "life_expectancy": 61.5,
+        "expec_yr_school": 14.3,
+        "mean_yr_school": 11.6,
+        "gross_inc_percap": 13185
+    },
+    "South Sudan": {
+        "life_expectancy": 55.6,
+        "expec_yr_school": 5.6,
+        "mean_yr_school": 5.7,
+        "gross_inc_percap": 690
+    },
+    "Spain": {
+        "life_expectancy": 83.9,
+        "expec_yr_school": 17.8,
+        "mean_yr_school": 10.6,
+        "gross_inc_percap": 40043
+    },
+    "Sri Lanka": {
+        "life_expectancy": 76.6,
+        "expec_yr_school": 13.6,
+        "mean_yr_school": 11.2,
+        "gross_inc_percap": 11899
+    },
+    "Sudan": {
+        "life_expectancy": 65.6,
+        "expec_yr_school": 8.5,
+        "mean_yr_school": 3.9,
+        "gross_inc_percap": 3514
+    },
+    "Suriname": {
+        "life_expectancy": 70.3,
+        "expec_yr_school": 11.0,
+        "mean_yr_school": 8.4,
+        "gross_inc_percap": 12309
+    },
+    "Sweden": {
+        "life_expectancy": 83.5,
+        "expec_yr_school": 19.0,
+        "mean_yr_school": 12.7,
+        "gross_inc_percap": 56995
+    },
+    "Switzerland": {
+        "life_expectancy": 84.3,
+        "expec_yr_school": 16.6,
+        "mean_yr_school": 13.9,
+        "gross_inc_percap": 69432
+    },
+    "Syrian Arab Republic": {
+        "life_expectancy": 72.3,
+        "expec_yr_school": 7.4,
+        "mean_yr_school": 5.7,
+        "gross_inc_percap": 3594
+    },
+    "Tajikistan": {
+        "life_expectancy": 71.3,
+        "expec_yr_school": 10.9,
+        "mean_yr_school": 11.3,
+        "gross_inc_percap": 4807
+    },
+    "Tanzania (United Republic of)": {
+        "life_expectancy": 66.8,
+        "expec_yr_school": 8.6,
+        "mean_yr_school": 5.6,
+        "gross_inc_percap": 2578
+    },
+    "Thailand": {
+        "life_expectancy": 79.7,
+        "expec_yr_school": 15.6,
+        "mean_yr_school": 8.8,
+        "gross_inc_percap": 16886
+    },
+    "Timor-Leste": {
+        "life_expectancy": 69.1,
+        "expec_yr_school": 13.2,
+        "mean_yr_school": 6.0,
+        "gross_inc_percap": 1629
+    },
+    "Togo": {
+        "life_expectancy": 61.6,
+        "expec_yr_school": 13.0,
+        "mean_yr_school": 5.6,
+        "gross_inc_percap": 2214
+    },
+    "Tonga": {
+        "life_expectancy": 71.3,
+        "expec_yr_school": 16.3,
+        "mean_yr_school": 10.9,
+        "gross_inc_percap": 6360
+    },
+    "Trinidad and Tobago": {
+        "life_expectancy": 74.7,
+        "expec_yr_school": 14.1,
+        "mean_yr_school": 11.7,
+        "gross_inc_percap": 22473
+    },
+    "Tunisia": {
+        "life_expectancy": 74.3,
+        "expec_yr_school": 14.6,
+        "mean_yr_school": 8.0,
+        "gross_inc_percap": 10296
+    },
+    "T\u00fcrkiye": {
+        "life_expectancy": 78.5,
+        "expec_yr_school": 19.7,
+        "mean_yr_school": 8.8,
+        "gross_inc_percap": 32833
+    },
+    "Turkmenistan": {
+        "life_expectancy": 69.4,
+        "expec_yr_school": 13.2,
+        "mean_yr_school": 11.1,
+        "gross_inc_percap": 12859
+    },
+    "Tuvalu": {
+        "life_expectancy": 64.9,
+        "expec_yr_school": 12.1,
+        "mean_yr_school": 10.6,
+        "gross_inc_percap": 4754
+    },
+    "Uganda": {
+        "life_expectancy": 63.6,
+        "expec_yr_school": 11.5,
+        "mean_yr_school": 6.2,
+        "gross_inc_percap": 2240
+    },
+    "Ukraine": {
+        "life_expectancy": 68.6,
+        "expec_yr_school": 13.3,
+        "mean_yr_school": 11.1,
+        "gross_inc_percap": 11416
+    },
+    "United Arab Emirates": {
+        "life_expectancy": 79.2,
+        "expec_yr_school": 17.2,
+        "mean_yr_school": 12.8,
+        "gross_inc_percap": 74103
+    },
+    "United Kingdom": {
+        "life_expectancy": 82.2,
+        "expec_yr_school": 17.6,
+        "mean_yr_school": 13.4,
+        "gross_inc_percap": 46623
+    },
+    "United States": {
+        "life_expectancy": 78.2,
+        "expec_yr_school": 16.4,
+        "mean_yr_school": 13.6,
+        "gross_inc_percap": 65564
+    },
+    "Uruguay": {
+        "life_expectancy": 78.0,
+        "expec_yr_school": 17.4,
+        "mean_yr_school": 9.1,
+        "gross_inc_percap": 22206
+    },
+    "Uzbekistan": {
+        "life_expectancy": 71.7,
+        "expec_yr_school": 12.0,
+        "mean_yr_school": 11.9,
+        "gross_inc_percap": 8055
+    },
+    "Vanuatu": {
+        "life_expectancy": 70.5,
+        "expec_yr_school": 11.8,
+        "mean_yr_school": 7.2,
+        "gross_inc_percap": 3243
+    },
+    "Venezuela (Bolivarian Republic of)": {
+        "life_expectancy": 71.1,
+        "expec_yr_school": 13.5,
+        "mean_yr_school": 9.6,
+        "gross_inc_percap": 6184
+    },
+    "Viet Nam": {
+        "life_expectancy": 74.6,
+        "expec_yr_school": 13.1,
+        "mean_yr_school": 8.5,
+        "gross_inc_percap": 10813
+    },
+    "Yemen": {
+        "life_expectancy": 63.7,
+        "expec_yr_school": 7.9,
+        "mean_yr_school": 2.8,
+        "gross_inc_percap": 1105
+    },
+    "Zambia": {
+        "life_expectancy": 61.8,
+        "expec_yr_school": 11.0,
+        "mean_yr_school": 7.3,
+        "gross_inc_percap": 3157
+    },
+    "Zimbabwe": {
+        "life_expectancy": 59.4,
+        "expec_yr_school": 11.0,
+        "mean_yr_school": 8.8,
+        "gross_inc_percap": 2078
+    },
+    "Very high human development": {
+        "life_expectancy": 79.3,
+        "expec_yr_school": 16.6,
+        "mean_yr_school": 12.3,
+        "gross_inc_percap": 44957
+    },
+    "High human development": {
+        "life_expectancy": 75.2,
+        "expec_yr_school": 14.5,
+        "mean_yr_school": 8.6,
+        "gross_inc_percap": 15483
+    },
+    "Medium human development": {
+        "life_expectancy": 68.0,
+        "expec_yr_school": 12.3,
+        "mean_yr_school": 6.7,
+        "gross_inc_percap": 6444
+    },
+    "Low human development": {
+        "life_expectancy": 61.6,
+        "expec_yr_school": 9.3,
+        "mean_yr_school": 4.7,
+        "gross_inc_percap": 3185
+    },
+    "Arab States": {
+        "life_expectancy": 71.3,
+        "expec_yr_school": 11.9,
+        "mean_yr_school": 7.8,
+        "gross_inc_percap": 14390
+    },
+    "East Asia and the Pacific": {
+        "life_expectancy": 76.2,
+        "expec_yr_school": 14.5,
+        "mean_yr_school": 8.2,
+        "gross_inc_percap": 16137
+    },
+    "Europe and Central Asia": {
+        "life_expectancy": 73.6,
+        "expec_yr_school": 15.5,
+        "mean_yr_school": 10.6,
+        "gross_inc_percap": 19762
+    },
+    "Latin America and the Caribbean": {
+        "life_expectancy": 73.7,
+        "expec_yr_school": 14.8,
+        "mean_yr_school": 9.0,
+        "gross_inc_percap": 15109
+    },
+    "South Asia": {
+        "life_expectancy": 68.4,
+        "expec_yr_school": 11.9,
+        "mean_yr_school": 6.6,
+        "gross_inc_percap": 6971
+    },
+    "Sub-Saharan Africa": {
+        "life_expectancy": 60.6,
+        "expec_yr_school": 10.3,
+        "mean_yr_school": 6.0,
+        "gross_inc_percap": 3666
+    },
+    "World": {
+        "life_expectancy": 72.0,
+        "expec_yr_school": 13.0,
+        "mean_yr_school": 8.7,
+        "gross_inc_percap": 17254
+    }
+}

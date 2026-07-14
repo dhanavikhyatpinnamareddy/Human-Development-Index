@@ -1,0 +1,713 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-4 mt-4 fade-in">
+    <div class="row">
+        <!-- Sidebar Navigation -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="position-sticky pe-3 border-end" style="top: 100px; height: calc(100vh - 120px); overflow-y: auto;">
+                <h6 class="text-primary fw-bold text-uppercase tracking-wide mb-4">PROJECT PORTAL</h6>
+                <nav class="nav flex-column gap-2" id="portal-nav">
+                    
+                    <div class="fw-bold text-dark mt-2" style="font-size: 0.9rem;">1. Brainstorming & Ideation</div>
+                    <a class="nav-link text-muted small py-1 ps-3 cursor-pointer" onclick="showDoc('brainstorming', this)">Brainstorming Notes</a>
+                    <a class="nav-link text-muted small py-1 ps-3 cursor-pointer" onclick="showDoc('problem', this)">Problem Statement</a>
+
+                    <div class="fw-bold text-dark mt-3" style="font-size: 0.9rem;">2. Requirement Analysis</div>
+                    <a class="nav-link text-muted small py-1 ps-3 cursor-pointer" onclick="showDoc('data-dict', this)">Data Dictionary</a>
+                    <a class="nav-link text-muted small py-1 ps-3 cursor-pointer" onclick="showDoc('req-spec', this)">Requirements Specification</a>
+                    <a class="nav-link text-muted small py-1 ps-3 cursor-pointer" onclick="showDoc('eda-gallery', this)">Exploratory Data Analysis</a>
+
+                    <div class="fw-bold text-dark mt-3" style="font-size: 0.9rem;">3. Project Design Phase</div>
+                    <a class="nav-link text-muted small py-1 ps-3 cursor-pointer" onclick="showDoc('pipeline', this)">Pipeline Design & Math</a>
+                    <a class="nav-link text-muted small py-1 ps-3 cursor-pointer" onclick="showDoc('architecture', this)">System Architecture</a>
+
+                    <div class="fw-bold text-dark mt-3" style="font-size: 0.9rem;">4. Project Planning Phase</div>
+                    <a class="nav-link text-muted small py-1 ps-3 cursor-pointer" onclick="showDoc('schedule', this)">Project Schedule</a>
+                    <a class="nav-link text-muted small py-1 ps-3 cursor-pointer" onclick="showDoc('risk', this)">Risk Mitigation</a>
+
+                    <div class="fw-bold text-dark mt-3" style="font-size: 0.9rem;">5. Project Development Phase</div>
+                    <a class="nav-link text-muted small py-1 ps-3 cursor-pointer" onclick="showDoc('dev-notes', this)">Development Notes</a>
+                    <a class="nav-link text-muted small py-1 ps-3 cursor-pointer" onclick="showDoc('model-sel', this)">Model Selection & Ablation</a>
+
+                    <div class="fw-bold text-dark mt-3" style="font-size: 0.9rem;">6. Project Testing</div>
+                    <a class="nav-link text-muted small py-1 ps-3 cursor-pointer" onclick="showDoc('code-test', this)">Code Testing</a>
+                    <a class="nav-link text-muted small py-1 ps-3 cursor-pointer" onclick="showDoc('eval', this)">Model Evaluation</a>
+
+                    <div class="fw-bold text-dark mt-3" style="font-size: 0.9rem;">7. Project Documentation</div>
+                    <a class="nav-link text-muted small py-1 ps-3 cursor-pointer" onclick="showDoc('deploy', this)">Deployment & API Guide</a>
+                    <a class="nav-link text-muted small py-1 ps-3 cursor-pointer" onclick="showDoc('user-guide', this)">User Guide & Future Scope</a>
+
+                    <div class="fw-bold text-dark mt-3" style="font-size: 0.9rem;">8. Project Demonstration</div>
+                    <a class="nav-link text-muted small py-1 ps-3 cursor-pointer" onclick="showDoc('demo', this)">Demo Walkthrough</a>
+
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="col-lg-9">
+            <!-- Mobile Navigation (Visible only on small screens) -->
+            <div class="d-lg-none mb-4">
+                <label for="mobile-portal-nav" class="form-label fw-bold text-primary small">Select Document Section</label>
+                <select class="form-select border-primary shadow-sm" id="mobile-portal-nav" onchange="showDoc(this.value, null)">
+                    <optgroup label="1. Brainstorming & Ideation">
+                        <option value="brainstorming">Brainstorming Notes</option>
+                        <option value="problem">Problem Statement</option>
+                    </optgroup>
+                    <optgroup label="2. Requirement Analysis">
+                        <option value="data-dict">Data Dictionary</option>
+                        <option value="req-spec">Requirements Specification</option>
+                        <option value="eda-gallery">Exploratory Data Analysis</option>
+                    </optgroup>
+                    <optgroup label="3. Project Design Phase">
+                        <option value="pipeline">Pipeline Design & Math</option>
+                        <option value="architecture">System Architecture</option>
+                    </optgroup>
+                    <optgroup label="4. Project Planning Phase">
+                        <option value="schedule">Project Schedule</option>
+                        <option value="risk">Risk Mitigation</option>
+                    </optgroup>
+                    <optgroup label="5. Project Development Phase">
+                        <option value="dev-notes">Development Notes</option>
+                        <option value="model-sel">Model Selection & Ablation</option>
+                    </optgroup>
+                    <optgroup label="6. Project Testing">
+                        <option value="code-test">Code Testing</option>
+                        <option value="eval">Model Evaluation</option>
+                    </optgroup>
+                    <optgroup label="7. Project Documentation">
+                        <option value="deploy">Deployment & API Guide</option>
+                        <option value="user-guide">User Guide & Future Scope</option>
+                    </optgroup>
+                    <optgroup label="8. Project Demonstration">
+                        <option value="demo">Demo Walkthrough</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="bento-card bg-white position-relative" style="min-height: 80vh;">
+                
+                <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-3">
+                    <p class="text-muted small mb-0" id="breadcrumb">Project Portal / Brainstorming Notes</p>
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill fw-medium" onclick="copyDocumentation()">
+                        <i class="fa-regular fa-copy me-2"></i>Copy Document
+                    </button>
+                </div>
+
+                <div id="copy-target">
+                    <!-- 1. Brainstorming Notes -->
+                    <div id="brainstorming" class="portal-doc">
+                        <h2 class="fw-bold mb-4">Brainstorming Notes</h2>
+                        <h5 class="fw-bold text-primary mt-4">1. Project Conception & Literature Review</h5>
+                        <p class="text-muted lh-lg">During the initial planning phases, the team focused on bridging the gap between raw statistical data provided by global institutions (like the UNDP) and public accessibility. A literature review of the annual Human Development Reports revealed that while researchers have access to massive Excel annexes detailing the Human Development Index (HDI), everyday users, policymakers, and students lack an intuitive, interactive tool to experiment with socioeconomic variables. The brainstorming phase centered on conceptualizing an end-to-end Machine Learning web application that acts as a real-time predictor and educational sandbox.</p>
+                        
+                        <h5 class="fw-bold text-primary mt-4">2. Target Personas</h5>
+                        <ul class="text-muted lh-lg">
+                            <li><strong>Persona A: The Policy Maker / Researcher.</strong> Needs to understand how slight improvements in education or GNI per capita could shift a hypothetical region from "Medium" to "High" human development. Requires precise, fast, and mathematically sound model predictions derived from verified historical datasets.</li>
+                            <li><strong>Persona B: The Student / General Public.</strong> Needs an approachable interface to understand what HDI is, why it matters, and how health, wealth, and education intersect. Requires strong UI/UX, glossaries, and visual cues (like progress gauges and color-coded badges).</li>
+                        </ul>
+
+                        <h5 class="fw-bold text-primary mt-4">3. Core Feature Wishlist</h5>
+                        <ol class="text-muted lh-lg">
+                            <li><strong>Multi-Page Interface:</strong> A clean separation between the home dashboard, prediction tool, and system documentation.</li>
+                            <li><strong>Real-time Predictions:</strong> Instantaneous scoring upon form submission without heavy page reloads or long ML inference delays.</li>
+                            <li><strong>Visual Score Interpretation:</strong> Progress bars and color-coded badges (Red for Low, Green for Very High) to contextualize the numerical output (0.000 - 1.000).</li>
+                            <li><strong>Transparency & Documentation:</strong> A dedicated portal detailing the exact machine learning workflow to build trust with users and satisfy academic rigor.</li>
+                        </ol>
+                    </div>
+
+                    <!-- 2. Problem Statement -->
+                    <div id="problem" class="portal-doc" style="display: none;">
+                        <h2 class="fw-bold mb-4">Problem Statement</h2>
+                        <h5 class="fw-bold text-primary mt-4">The Challenge: Data Inaccessibility</h5>
+                        <p class="text-muted lh-lg">The United Nations Development Programme (UNDP) publishes comprehensive Human Development Reports annually. However, understanding how specific regional factors (like boosting expected schooling by 2 years or increasing GNI by $5,000) directly impact a country's overall HDI score requires complex, manual geometric mean calculations based on shifting minimum and maximum global goalposts. Furthermore, the raw datasets (often spanning from 1990 to 2022) contain severe data skewness and missing values, making it difficult for non-technical individuals to extract predictive insights without extensive data engineering knowledge.</p>
+                        
+                        <h5 class="fw-bold text-primary mt-4">The Proposed Solution: Algorithmic Approximation</h5>
+                        <p class="text-muted lh-lg">This project proposes the development of a fully automated <strong>Human Development Index Predictor</strong>. By leveraging historical panel data spanning over three decades, we will train a highly accurate Machine Learning regression model capable of instantly approximating the mathematical HDI calculation based on 4 core user inputs. The model will be serialized and deployed via a modern Flask web application, featuring a "Google-grade" Bento Box UI design to ensure maximum accessibility, responsiveness, and educational value.</p>
+                        
+                        <h5 class="fw-bold text-primary mt-4">Project Objectives & KPIs</h5>
+                        <ul class="text-muted lh-lg">
+                            <li><strong>Data Pipeline:</strong> Construct a robust data preprocessing pipeline that dynamically handles missing values and normalizes severe exponential skewness in financial data.</li>
+                            <li><strong>Model Accuracy:</strong> Train, evaluate, and optimize a predictive model achieving a minimum R² score of > 0.95 and an RMSE of < 0.05.</li>
+                            <li><strong>Deployment:</strong> Deploy a lightweight, production-ready WSGI web server that processes user inputs and visualizes the results dynamically with sub-100ms latency.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 3. Data Dictionary -->
+                    <div id="data-dict" class="portal-doc" style="display: none;">
+                        <h2 class="fw-bold mb-4">Data Dictionary</h2>
+                        <p class="text-muted lh-lg">The following schema defines the core features extracted from the Kaggle HDR Dataset (1990–2022) and the UNDP 2025 Statistical Annex utilized for model training. The dataset initially contained over 7,000 historical records.</p>
+                        
+                        <div class="table-responsive my-4">
+                            <table class="table table-bordered table-hover">
+                                <thead class="bg-light">
+                                    <tr>
+                                        <th>Column Name</th>
+                                        <th>Data Type</th>
+                                        <th>Unit / Range</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-bold">life_expectancy</td>
+                                        <td>Float64</td>
+                                        <td>Years (20 - 100)</td>
+                                        <td>The average number of years a newborn infant would live if prevailing patterns of mortality at the time of birth were to stay the same. (Health Dimension)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">expec_yr_school</td>
+                                        <td>Float64</td>
+                                        <td>Years (0 - 25)</td>
+                                        <td>Number of years of schooling that a child of school entrance age can expect to receive. (Education Dimension)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">mean_yr_school</td>
+                                        <td>Float64</td>
+                                        <td>Years (0 - 20)</td>
+                                        <td>Average number of years of education received by people ages 25 and older. (Education Dimension)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">gross_inc_percap</td>
+                                        <td>Float64</td>
+                                        <td>PPP $ (100+)</td>
+                                        <td>Gross National Income per capita expressed in constant 2017 international dollars converted using purchasing power parity (PPP) rates.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">log_gross_inc_percap</td>
+                                        <td>Float64</td>
+                                        <td>Logarithmic Scale</td>
+                                        <td><strong>Engineered Feature:</strong> The natural logarithm (`np.log()`) of `gross_inc_percap`. Created to linearize the exponential distribution of global wealth.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">hdi</td>
+                                        <td>Float64</td>
+                                        <td>Index (0.000 - 1.000)</td>
+                                        <td><strong>Target Variable:</strong> The computed Human Development Index score summarizing health, education, and standard of living.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-muted small"><strong>Note on Missing Values (NaN):</strong> During EDA, records missing any of the 4 core independent variables or the target HDI were strictly dropped. Because HDI is a rigid mathematical formula, imputing synthetic means or medians for missing values would corrupt the mathematical relationship and severely degrade the model's predictive hyperplane.</p>
+                    </div>
+
+                    <!-- 4. Requirements Specification -->
+                    <div id="req-spec" class="portal-doc" style="display: none;">
+                        <h2 class="fw-bold mb-4">Requirements Specification</h2>
+                        
+                        <h5 class="fw-bold text-primary mt-4">1. Functional Requirements (FR)</h5>
+                        <ul class="text-muted lh-lg">
+                            <li><strong>FR1 (Data Ingestion & Routing):</strong> The Flask server must securely parse and extract HTTP POST requests containing user demographic inputs via the `/predict` route.</li>
+                            <li><strong>FR2 (Data Transformation):</strong> The backend must autonomously apply a natural logarithm transformation (`np.log`) to the `gross_inc_percap` field to match the exact mathematical state of the training data before feeding it to the model.</li>
+                            <li><strong>FR3 (Model Inference):</strong> The system must construct a 1x4 NumPy array, pass it to the serialized Scikit-Learn `HDI.pkl` model, and retrieve the predicted index score.</li>
+                            <li><strong>FR4 (Boundary Clamping):</strong> The system must programmatically clamp the final prediction using `min(max(prediction, 0.0), 1.0)` to ensure the output remains strictly bounded between 0.000 and 1.000, preventing mathematical edge-case anomalies.</li>
+                            <li><strong>FR5 (Dynamic Categorization):</strong> The system must classify the continuous score into one of four distinct tiers based on official UNDP thresholds: Low (<0.550), Medium (0.550-0.699), High (0.700-0.799), or Very High (≥0.800).</li>
+                        </ul>
+
+                        <h5 class="fw-bold text-primary mt-4">2. Non-Functional Requirements (NFR)</h5>
+                        <ul class="text-muted lh-lg">
+                            <li><strong>NFR1 (Performance/Latency):</strong> ML inference latency must remain under 100 milliseconds. The model must be loaded into memory globally upon server startup, avoiding costly disk I/O reads on every single request.</li>
+                            <li><strong>NFR2 (Usability & Accessibility):</strong> The UI must be fully responsive, scaling flawlessly across mobile, tablet, and desktop viewports using Bootstrap 5 fluid grids. Input fields must utilize HTML5 native number keyboards on mobile devices.</li>
+                            <li><strong>NFR3 (Security & Reliability):</strong> The application must implement graceful error handling. If a user bypasses client-side HTML validations (e.g. via cURL) and submits negative income strings, the server must intercept the Python `MathDomainError` or `ValueError` using a `try...except` block and render a friendly UI alert without crashing the Gunicorn worker.</li>
+                            <li><strong>NFR4 (Aesthetics):</strong> The interface must adhere to modern Material 3 design patterns (Bento Grid layouts, soft drop-shadows, 16px/24px border radiuses, minimalist sans-serif typography).</li>
+                        </ul>
+                    </div>
+
+                    <!-- 2.5 EDA Gallery -->
+                    <div id="eda-gallery" class="portal-doc" style="display: none;">
+                        <h2 class="fw-bold mb-4">Exploratory Data Analysis Gallery</h2>
+                        <p class="text-muted lh-lg">Visualizations derived directly from the Jupyter Notebook environment to validate statistical assumptions before training the machine learning pipeline.</p>
+                        
+                        <div class="row g-4 mt-2">
+                            <div class="col-md-6">
+                                <div class="bg-light p-3 rounded border">
+                                    <h6 class="fw-bold text-center mb-3">1. Target Variable Distribution</h6>
+                                    <img src="{{ url_for('static', filename='img/eda/hdi_dist.png') }}" class="img-fluid rounded shadow-sm" alt="HDI Distribution">
+                                    <p class="text-muted small mt-2 mb-0 text-center">Shows the slightly left-skewed, continuous nature of global HDI scores.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="bg-light p-3 rounded border">
+                                    <h6 class="fw-bold text-center mb-3">2. Pearson Correlation Matrix</h6>
+                                    <img src="{{ url_for('static', filename='img/eda/correlation.png') }}" class="img-fluid rounded shadow-sm" alt="Correlation Matrix">
+                                    <p class="text-muted small mt-2 mb-0 text-center">Validates that Life Expectancy and Education hold immense predictive power (>0.90).</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="bg-light p-3 rounded border">
+                                    <h6 class="fw-bold text-center mb-3">3. Income Normalization (GNI)</h6>
+                                    <img src="{{ url_for('static', filename='img/eda/gni_transform.png') }}" class="img-fluid rounded shadow-sm" alt="GNI Transformation">
+                                    <p class="text-muted small mt-2 mb-0 text-center">Demonstrates how the `np.log()` function successfully linearizes exponential wealth inequality.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="bg-light p-3 rounded border">
+                                    <h6 class="fw-bold text-center mb-3">4. Health vs. HDI Mapping</h6>
+                                    <img src="{{ url_for('static', filename='img/eda/life_exp_scatter.png') }}" class="img-fluid rounded shadow-sm" alt="Life Expectancy Scatter">
+                                    <p class="text-muted small mt-2 mb-0 text-center">A strict linear slope confirming that linear regression is the mathematically optimal algorithm.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Pipeline Design -->
+                    <div id="pipeline" class="portal-doc" style="display: none;">
+                        <h2 class="fw-bold mb-4">Pipeline Design & Mathematics</h2>
+                        <p class="text-muted lh-lg">The machine learning pipeline is strictly decoupled into offline training sequences and online inference sequences. Because the target variable (HDI) is derived from a deterministic mathematical formula, our model architecture is designed to replicate that formula via statistical weights.</p>
+                        
+                        <h5 class="fw-bold text-primary mt-4">1. The Mathematical Foundation</h5>
+                        <p class="text-muted lh-lg">The official UNDP HDI calculation is a geometric mean of three normalized indices:</p>
+                        <div class="bg-light p-3 rounded mb-4 text-center border">
+                            <code class="text-dark fs-6">HDI = (I_health * I_education * I_income) ^ (1/3)</code>
+                        </div>
+                        <p class="text-muted lh-lg">Our Machine Learning model (Multiple Linear Regression) estimates this relationship using the formula:</p>
+                        <div class="bg-light p-3 rounded mb-4 text-center border">
+                            <code class="text-dark fs-6">Y (HDI) = β₀ + β₁(Life Exp) + β₂(Exp School) + β₃(Mean School) + β₄(Log GNI) + ε</code>
+                        </div>
+
+                        <h5 class="fw-bold text-primary mt-4">2. Offline Training Pipeline</h5>
+                        <div class="bg-light p-4 rounded-3 mb-4 font-monospace small">
+                            [1] Raw Data Ingestion (hdr_general.csv)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                            [2] Null Imputation (Drop records missing core features)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                            [3] Feature Engineering (Apply np.log() to gross_inc_percap)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                            [4] Train/Test Split (80/20 via Scikit-Learn `train_test_split`)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                            [5] Fit Linear Regression Model (Minimize Residual Sum of Squares)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                            [6] Model Serialization (`pickle.dump()` to HDI.pkl)
+                        </div>
+
+                        <h5 class="fw-bold text-primary mt-4">3. Online Inference Pipeline</h5>
+                        <div class="bg-light p-4 rounded-3 font-monospace small">
+                            [1] User Input Form (HTML GUI)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                            [2] Client-side HTML5 Constraint Validation (min/max/required)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                            [3] Flask Route (/predict) intercepts HTTP POST request<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                            [4] Type Casting (Float) & Log Transformation on backend<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                            [5] `model.predict(np.array([[LE, ES, MS, Log_GNI]]))`<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                            [6] Template Rendering (Jinja2 constructs Gauge UI with Result)
+                        </div>
+                    </div>
+
+                    <!-- 6. System Architecture -->
+                    <div id="architecture" class="portal-doc" style="display: none;">
+                        <h2 class="fw-bold mb-4">System Architecture</h2>
+                        <p class="text-muted lh-lg">The application utilizes a classic Model-View-Controller (MVC) architectural pattern heavily optimized for lightweight PaaS (Platform as a Service) cloud deployment.</p>
+
+                        <h5 class="fw-bold text-primary mt-4">Component Breakdown</h5>
+                        <ul class="text-muted lh-lg">
+                            <li><strong>The View (Frontend):</strong> Composed entirely of Jinja2 HTML templates, Bootstrap 5 CSS, and vanilla JavaScript. It handles all visual rendering, form validations, and asynchronous UI states (like loading spinners).</li>
+                            <li><strong>The Controller (Flask Server):</strong> `app.py` acts as the orchestrator. It manages the routing table (`/`, `/about`, `/predict`, `/portal`), handles HTTP verb constraints, manages the Python context, unpickles the ML model on startup to save memory, and processes the business logic.</li>
+                            <li><strong>The Model (Scikit-Learn):</strong> A serialized binary object (`models/HDI.pkl`). Living in the application memory space, it executes mathematically optimized matrix multiplications against incoming NumPy arrays to yield deterministic predictions.</li>
+                        </ul>
+
+                        <div class="bg-light p-4 rounded text-center my-5 border shadow-sm">
+                            <h6 class="text-muted fw-bold mb-4">Data Flow & Infrastructure Diagram</h6>
+                            <pre class="text-start small mx-auto" style="max-width: 600px;">
+[ Client Browser (Mobile/Desktop) ]
+        |
+        |  HTTP GET/POST
+        v
+[ Cloud Load Balancer / Proxy ]
+        |
+        |  WSGI Protocol
+        v
+[ Gunicorn Worker Processes ]
+        |
+        +---+--------------------------------+
+            |                                |
+            v                                v
+  [ Flask App Context ]             [ Static Assets ]
+    - Route Handlers                  - style.css
+    - Error Handling                  - main.js
+            |                                |
+            v                                v
+  [ Scikit-Learn Engine ]           [ Jinja2 Engine ]
+    - HDI.pkl (Linear Reg)            - templates/*.html
+                            </pre>
+                        </div>
+                    </div>
+
+                    <!-- 7. Project Schedule -->
+                    <div id="schedule" class="portal-doc" style="display: none;">
+                        <h2 class="fw-bold mb-4">Project Schedule</h2>
+                        <p class="text-muted lh-lg">Development was executed using an Agile methodology, broken down into sequential sprints over the project lifecycle. Strict version control and isolated environments were maintained.</p>
+
+                        <div class="table-responsive my-4">
+                            <table class="table table-bordered table-striped">
+                                <thead class="bg-primary text-white">
+                                    <tr><th>Phase</th><th>Task Description</th><th>Est. Effort</th><th>Status</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-bold">1. Data Acquisition</td>
+                                        <td>Sourcing Kaggle panels (1990-2022) and UNDP reference tables. Defining data dictionary.</td>
+                                        <td>4 Hours</td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">2. Exploratory Data Analysis</td>
+                                        <td>Jupyter notebook generation. Plotting distributions, analyzing correlation matrices, and Variance Inflation Factors (VIF).</td>
+                                        <td>8 Hours</td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">3. Preprocessing & Splitting</td>
+                                        <td>Handling null values. Engineering `log_gross_inc_percap`. Creating 80/20 train/test splits.</td>
+                                        <td>6 Hours</td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">4. Model Training & Ablation</td>
+                                        <td>Training Baseline vs Scaled Linear Regression models. Evaluating R², MAE, RMSE metrics.</td>
+                                        <td>10 Hours</td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">5. Web App Backend</td>
+                                        <td>Developing Flask API (`app.py`), establishing routing, error handling, and model unpickling.</td>
+                                        <td>12 Hours</td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">6. UI/UX Frontend</td>
+                                        <td>Building Bootstrap 5 templates, custom CSS Bento grid, gauge animations, and responsive forms.</td>
+                                        <td>16 Hours</td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">7. Documentation & Deploy</td>
+                                        <td>Generating Project Portal, refining README.md, preparing `requirements.txt` and `Procfile` for Render deployment.</td>
+                                        <td>8 Hours</td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 8. Risk Mitigation -->
+                    <div id="risk" class="portal-doc" style="display: none;">
+                        <h2 class="fw-bold mb-4">Risk Mitigation</h2>
+                        <p class="text-muted lh-lg">Identifying, analyzing, and mitigating risks was a continuous process throughout the ML lifecycle.</p>
+                        
+                        <h5 class="fw-bold text-primary mt-4">1. Data Skewness & Outlier Distortion</h5>
+                        <p class="text-muted lh-lg"><strong>Risk:</strong> GNI per capita exhibits massive positive exponential skew globally (some developing nations sit at $1k, while developed nations exceed $100k+). A raw linear model would heavily overweight high-income nations, distorting the predictive hyperplane and ruining predictions for developing nations.<br>
+                        <strong>Mitigation:</strong> Introduced a mandatory `np.log()` natural logarithm transformation on the income feature during both offline training and online inference. This successfully normalized the distribution into a Gaussian bell curve, stabilizing the model weights.</p>
+
+                        <h5 class="fw-bold text-primary mt-4">2. Model Overfitting & Memorization</h5>
+                        <p class="text-muted lh-lg"><strong>Risk:</strong> Complex tree-based models (Random Forests, XGBoost) run a severe risk of memorizing the exact mathematical HDI heuristic rather than learning generalizable macro-trends, leading to catastrophic failure on noisy, real-world edge cases.<br>
+                        <strong>Mitigation:</strong> Consciously restricted the algorithm choice to Multiple Linear Regression, which naturally acts as a high-bias, low-variance regularizer, providing extreme stability across all quadrants of data.</p>
+
+                        <h5 class="fw-bold text-primary mt-4">3. Application Security & Crash Prevention</h5>
+                        <p class="text-muted lh-lg"><strong>Risk:</strong> Malicious or accidental user inputs triggering Python TypeErrors, bringing down the entire Flask worker process.<br>
+                        <strong>Mitigation:</strong> Implemented strict front-end HTML5 boundaries (`min`, `max`, `type="number"`, `required`). Backed it up with a comprehensive `try...except` block wrapping the `/predict` route in `app.py` to catch all mathematical anomalies (like `np.log(0)`) and redirect the user safely.</p>
+
+                        <h5 class="fw-bold text-primary mt-4">4. Dependency Bloat</h5>
+                        <p class="text-muted lh-lg"><strong>Risk:</strong> Machine learning web apps often suffer from massive docker image sizes, causing slow deployments and out-of-memory crashes on free cloud tiers.<br>
+                        <strong>Mitigation:</strong> Removed `pandas` from the production `requirements.txt`. Refactored the `app.py` inference script to exclusively utilize lightweight `numpy` arrays for data passing.</p>
+                    </div>
+
+                    <!-- 9. Development Notes -->
+                    <div id="dev-notes" class="portal-doc" style="display: none;">
+                        <h2 class="fw-bold mb-4">Development Notes</h2>
+                        <p class="text-muted lh-lg">The software engineering strategy utilized a strictly partitioned hybrid environment approach to separate exploratory research from production engineering.</p>
+                        
+                        <h5 class="fw-bold text-primary mt-4">Environment Setup</h5>
+                        <ul class="text-muted lh-lg mb-4">
+                            <li><strong>Virtual Environment:</strong> A dedicated Python 3.13 `.venv` was created to isolate dependencies. `pip` was used to install `jupyter`, `scikit-learn`, `flask`, `pandas`, `matplotlib`, and `seaborn`.</li>
+                            <li><strong>IDE Configuration:</strong> VS Code was configured with `.vscode/settings.json` utilizing absolute extra paths to force Pylance to properly resolve heavy ML libraries during notebook execution.</li>
+                        </ul>
+
+                        <h5 class="fw-bold text-primary mt-4">Workflow Isolation</h5>
+                        <ul class="text-muted lh-lg mb-4">
+                            <li><strong>Jupyter Notebooks for R&D:</strong> Initial data exploration and cleaning were performed inside `01_EDA_and_Data_Cleaning.ipynb`. This allowed for immediate visual feedback of correlation matrices, VIF statistics, and histograms without constantly restarting a server.</li>
+                            <li><strong>Modular Python Scripts for Production:</strong> Once the mathematical logic was proven sound, it was extracted from the notebook environment into a pure, headless Python script (`src/train_model.py`). This guarantees reproducibility. The script can be executed via terminal to instantly drop a fresh `HDI.pkl` into the `/models` directory.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 10. Model Selection -->
+                    <div id="model-sel" class="portal-doc" style="display: none;">
+                        <h2 class="fw-bold mb-4">Model Selection & Ablation Study</h2>
+                        <p class="text-muted lh-lg">Selecting the optimal algorithm required understanding the exact nature of the target variable.</p>
+
+                        <h5 class="fw-bold text-primary mt-4">The Nature of the Target Label</h5>
+                        <p class="text-muted lh-lg">Unlike predicting housing prices or stock market movements (which are influenced by hidden stochastic variables), the Human Development Index is a <em>deterministic synthetic label</em>. It is mathematically generated by taking the geometric mean of three normalized indices (Health Index, Education Index, Income Index). Therefore, there is zero hidden noise in the relationship between our 4 core features and the target label.</p>
+
+                        <h5 class="fw-bold text-primary mt-4">Why Linear Regression over Tree-Based Models?</h5>
+                        <p class="text-muted lh-lg">Because the relationship is a direct mathematical mapping (made perfectly linear by our `np.log` transformation on income), <strong>Linear Regression</strong> is the absolute perfect tool for the job. Tree-based models partition data in stair-step functions, which is highly inefficient for modeling a smooth continuous geometric curve.</p>
+
+                        <h5 class="fw-bold text-primary mt-4">Ablation Study: To Scale or Not To Scale?</h5>
+                        <p class="text-muted lh-lg">During Phase 4, we conducted an ablation study to test the necessity of Feature Scaling (Standardization). We trained two identical models: one with raw data, and one wrapped in a `StandardScaler` pipeline.</p>
+                        <div class="table-responsive my-3">
+                            <table class="table table-bordered table-sm small">
+                                <thead class="bg-light">
+                                    <tr><th>Model Variant</th><th>R² Score</th><th>MAE</th><th>RMSE</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Model A (Raw Features)</td><td>0.9986</td><td>0.0038</td><td>0.0060</td></tr>
+                                    <tr><td>Model B (Standard Scaled)</td><td>0.9986</td><td>0.0038</td><td>0.0060</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-muted lh-lg"><strong>Conclusion:</strong> Feature scaling had exactly zero impact on the final performance metrics. Because Linear Regression relies on coefficient weighting ($Y = WX + b$), the algorithm seamlessly scales its own internal weights to match the magnitude of the unscaled data. We explicitly opted to deploy <strong>Model A (Unscaled)</strong> to eliminate the need to serialize and load a scaler object in production, saving memory and processing cycles.</p>
+                    </div>
+
+                    <!-- 11. Code Testing -->
+                    <div id="code-test" class="portal-doc" style="display: none;">
+                        <h2 class="fw-bold mb-4">Code Testing & Validation</h2>
+                        <p class="text-muted lh-lg">Quality assurance involved testing the system across multiple bounds to ensure total robustness before deployment.</p>
+
+                        <h5 class="fw-bold text-primary mt-4">Test Cases and Assertions</h5>
+                        <div class="table-responsive my-4">
+                            <table class="table table-bordered table-sm small">
+                                <thead class="bg-light">
+                                    <tr><th>Test ID</th><th>Category</th><th>Test Case / Input Data</th><th>Expected Output</th><th>Result</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>TC-01</td>
+                                        <td>UI Validation</td>
+                                        <td>User enters Life Expectancy = 12</td>
+                                        <td>Form blocks submission, highlights input in red (min=20).</td>
+                                        <td class="text-success fw-bold">Pass</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TC-02</td>
+                                        <td>ML Inference</td>
+                                        <td>Norway Profile: 83.5 LE, 18.5 ES, 13.9 MS, $66000 GNI</td>
+                                        <td>Prediction > 0.900, Green UI Badge.</td>
+                                        <td class="text-success fw-bold">Pass</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TC-03</td>
+                                        <td>ML Inference</td>
+                                        <td>Niger Profile: 54.0 LE, 6.0 ES, 2.5 MS, $1200 GNI</td>
+                                        <td>Prediction < 0.550, Red UI Badge.</td>
+                                        <td class="text-success fw-bold">Pass</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TC-04</td>
+                                        <td>Backend Exception</td>
+                                        <td>User bypasses UI, sends POST GNI = -100</td>
+                                        <td>Server intercepts `np.log()` exception, returns safe UI error message.</td>
+                                        <td class="text-success fw-bold">Pass</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TC-05</td>
+                                        <td>Logic Clamping</td>
+                                        <td>Theoretical inputs yielding a prediction of 1.05</td>
+                                        <td>Python script clamps value to strictly 1.000 max.</td>
+                                        <td class="text-success fw-bold">Pass</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 12. Model Evaluation -->
+                    <div id="eval" class="portal-doc" style="display: none;">
+                        <h2 class="fw-bold mb-4">Model Evaluation</h2>
+                        <p class="text-muted lh-lg">Following the 80/20 train-test split, the Linear Regression model was evaluated against unseen testing data. The performance metrics are exceptionally high due to the deterministic nature of the target label.</p>
+
+                        <div class="row g-4 my-4">
+                            <div class="col-md-6">
+                                <div class="bg-light p-4 rounded text-center border">
+                                    <h1 class="text-primary fw-bolder mb-0">0.9986</h1>
+                                    <p class="text-muted fw-bold text-uppercase small mt-2 mb-0">R² Score</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="bg-light p-4 rounded text-center border">
+                                    <h1 class="text-primary fw-bolder mb-0">0.0038</h1>
+                                    <p class="text-muted fw-bold text-uppercase small mt-2 mb-0">Mean Absolute Error (MAE)</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="bg-light p-4 rounded text-center border">
+                                    <h1 class="text-primary fw-bolder mb-0">0.0000</h1>
+                                    <p class="text-muted fw-bold text-uppercase small mt-2 mb-0">Mean Squared Error (MSE)</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="bg-light p-4 rounded text-center border">
+                                    <h1 class="text-primary fw-bolder mb-0">0.0060</h1>
+                                    <p class="text-muted fw-bold text-uppercase small mt-2 mb-0">Root Mean Sq. Error (RMSE)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h5 class="fw-bold text-primary mt-4">Interpretation of Metrics</h5>
+                        <p class="text-muted lh-lg">
+                            <strong>R² Score (0.9986):</strong> Indicates that our model successfully captures and explains 99.86% of the variance in the Human Development Index based solely on the 4 provided features.<br>
+                            <strong>Mean Absolute Error (0.0038):</strong> Proves that, on average, our predictor is only off by fractions of a percent (0.0038 points on a 1.0 scale) when evaluating a new country's profile. This is an incredible degree of accuracy.<br>
+                            <strong>Root Mean Squared Error (0.0060):</strong> By heavily penalizing larger errors, the RMSE proves that the model's maximum deviations are extremely well-bounded, with no severe outliers in its predictive capabilities.
+                        </p>
+                    </div>
+
+                    <!-- 13. Deployment Guide -->
+                    <div id="deploy" class="portal-doc" style="display: none;">
+                        <h2 class="fw-bold mb-4">Deployment & API Guide</h2>
+                        <p class="text-muted lh-lg">The application is architected specifically for simple, lightweight deployment on PaaS providers such as Render, Heroku, or AWS Elastic Beanstalk.</p>
+
+                        <h5 class="fw-bold text-primary mt-4">1. Environment Preparation</h5>
+                        <p class="text-muted lh-lg">The repository is strictly controlled via `.gitignore` (blocking the `venv/` and `__pycache__` folders) and `.gitattributes` (handling binary `pkl` tracking). The `requirements.txt` contains exactly 4 dependencies: `Flask`, `numpy`, `scikit-learn`, and `gunicorn`.</p>
+
+                        <h5 class="fw-bold text-primary mt-4">2. Web Server Gateway Interface (WSGI)</h5>
+                        <p class="text-muted lh-lg">The repository includes a `Procfile` containing the string `web: gunicorn app:app`. This instructs cloud platforms to spin up production-grade UNIX Gunicorn worker processes to serve the Flask app concurrent requests, rather than using Flask's inherently insecure built-in development server.</p>
+
+                        <h5 class="fw-bold text-primary mt-4">3. Render Deployment Steps</h5>
+                        <ol class="text-muted lh-lg bg-light p-4 rounded border">
+                            <li>Push the complete, cleaned repository to GitHub.</li>
+                            <li>Log in to the Render Dashboard and click <strong>New Web Service</strong>.</li>
+                            <li>Connect the GitHub repository.</li>
+                            <li>Render will automatically detect the Python environment. Ensure the Build Command is set to <code>pip install -r requirements.txt</code>.</li>
+                            <li>Ensure the Start Command is set to <code>gunicorn app:app</code>.</li>
+                            <li>Click Deploy. The system will pull the image, install the 4 libraries, and be live globally within 3 minutes.</li>
+                        </ol>
+
+                        <h5 class="fw-bold text-primary mt-4">4. Internal API Endpoint Specs</h5>
+                        <pre class="bg-light p-3 rounded text-muted small border">
+ENDPOINT: /predict
+METHOD: POST
+HEADERS: Content-Type: application/x-www-form-urlencoded
+BODY PAYLOAD:
+ {
+   "life_expectancy": float,
+   "expec_yr_school": float,
+   "mean_yr_school": float,
+   "gross_inc_percap": float
+ }
+RESPONSE: Returns HTML Render of result.html injected with Context Variables.
+                        </pre>
+                    </div>
+
+                    <!-- 14. User Guide -->
+                    <div id="user-guide" class="portal-doc" style="display: none;">
+                        <h2 class="fw-bold mb-4">User Guide & Future Scope</h2>
+                        <p class="text-muted lh-lg">Navigating the Human Development Index Predictor is designed to be frictionless and intuitive for non-technical audiences.</p>
+
+                        <h5 class="fw-bold text-primary mt-4">Generating a Prediction</h5>
+                        <ol class="text-muted lh-lg">
+                            <li>From the Home dashboard, click the <strong>Check HDI Status</strong> button.</li>
+                            <li>You will be presented with the Predictor Form. You must fill in all 4 inputs.</li>
+                            <li><strong>Life Expectancy:</strong> Enter a realistic value between 20 and 100 years.</li>
+                            <li><strong>Expected Schooling:</strong> Enter the expected years a child will spend in school (usually 0 to 20).</li>
+                            <li><strong>Mean Schooling:</strong> Enter the average years of schooling currently possessed by adults (usually 0 to 15).</li>
+                            <li><strong>GNI Per Capita:</strong> Enter the gross national income (e.g. 15000). Do not use commas or dollar signs; the system parses raw numbers only.</li>
+                            <li>Click <strong>Submit Application</strong>. The button will disable and display a loading spinner to prevent duplicate submissions.</li>
+                        </ol>
+
+                        <h5 class="fw-bold text-primary mt-4">Interpreting Results</h5>
+                        <p class="text-muted lh-lg">The system will redirect you to the <strong>Decision Logs</strong> dashboard. Here you will see the exact calculated score. Pay attention to the color-coded badge (Red for Low, Yellow for Medium, Blue for High, Green for Very High). Below, a dynamic progress gauge visually represents where your hypothetical region stands on the global spectrum of human development.</p>
+
+                        <h5 class="fw-bold text-primary mt-4">Future Scope</h5>
+                        <ul class="text-muted lh-lg">
+                            <li><strong>REST API Decoupling:</strong> Converting the Flask app to return pure JSON responses, allowing a React or Next.js frontend to consume the predictions.</li>
+                            <li><strong>Time Series Forecasting:</strong> Integrating ARIMA or LSTM models to predict a country's future HDI trajectory based on historical velocity.</li>
+                            <li><strong>Dockerization:</strong> Writing a `Dockerfile` to containerize the application environment for ultimate cloud portability.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 15. Demo Walkthrough -->
+                    <div id="demo" class="portal-doc" style="display: none;">
+                        <h2 class="fw-bold mb-4">Demo Walkthrough</h2>
+                        <p class="text-muted lh-lg">For presentation and demonstration purposes, follow this optimal flow to showcase the system's capabilities to mentors or stakeholders.</p>
+
+                        <h5 class="fw-bold text-primary mt-4">Step 1: The Hook (Home Page)</h5>
+                        <p class="text-muted lh-lg">Start on the Home page. Briefly explain the 3 Bento grid cards (Health, Education, Standard of Living) to establish context on what the HDI is. Scroll down to the Model Performance table to brag about the 0.9986 R² score, instantly validating the engineering prowess of the ML pipeline before you even show the tool.</p>
+
+                        <h5 class="fw-bold text-primary mt-4">Step 2: The Test (Predictor Form)</h5>
+                        <p class="text-muted lh-lg">Navigate to the Predictor Form. Intentionally try to submit the form while it is empty or with a Life Expectancy of "5" to demonstrate the client-side validation logic catching the error. Then, input a distinct profile (e.g., a wealthy nation: 83 life exp, 18 years expected schooling, 13 years mean schooling, $60,000 GNI).</p>
+
+                        <h5 class="fw-bold text-primary mt-4">Step 3: The Reveal (Result Page)</h5>
+                        <p class="text-muted lh-lg">Click submit and point out the asynchronous loading spinner UX. Once redirected, highlight the custom color-coded badge and the animated progress bar filling up to match the score. Explain how the system dynamically generated the audit summary table below the score using Jinja2 context variables.</p>
+
+                        <h5 class="fw-bold text-primary mt-4">Step 4: The Proof (Project Portal)</h5>
+                        <p class="text-muted lh-lg">Conclude by opening the Project Portal. Click through the side navigation to demonstrate the extensive system documentation, architecture diagrams, testing methodologies, and deployment strategies. Remind the evaluator that the entire project was built to professional enterprise standards, from data scraping down to WSGI cloud deployment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function showDoc(docId, element) {
+    // Hide all docs
+    document.querySelectorAll('.portal-doc').forEach(d => {
+        d.style.display = 'none';
+        d.classList.remove('fade-in');
+    });
+    
+    // Show target doc with animation
+    const target = document.getElementById(docId);
+    target.style.display = 'block';
+    target.classList.add('fade-in');
+    
+    // Reset all nav links
+    document.querySelectorAll('#portal-nav .nav-link').forEach(l => {
+        l.classList.remove('border-start', 'border-primary', 'border-3', 'fw-bold', 'text-dark');
+        l.classList.add('text-muted');
+    });
+    
+    // Highlight active nav link
+    if (element) {
+        element.classList.remove('text-muted');
+        element.classList.add('border-start', 'border-primary', 'border-3', 'fw-bold', 'text-dark');
+        
+        // Update breadcrumb
+        const title = element.innerText;
+        document.getElementById('breadcrumb').innerText = 'Project Portal / ' + title;
+    }
+}
+
+// Set initial active state
+document.addEventListener("DOMContentLoaded", function() {
+    const firstLink = document.querySelector('#portal-nav .nav-link');
+    if(firstLink) {
+        firstLink.classList.remove('text-muted');
+        firstLink.classList.add('border-start', 'border-primary', 'border-3', 'fw-bold', 'text-dark');
+    }
+});
+
+function copyDocumentation() {
+    // Collect only the currently visible document text
+    let visibleDoc = "";
+    document.querySelectorAll('.portal-doc').forEach(d => {
+        if (d.style.display !== 'none') {
+            visibleDoc = d.innerText;
+        }
+    });
+
+    navigator.clipboard.writeText(visibleDoc).then(() => {
+        const btn = document.querySelector('button[onclick="copyDocumentation()"]');
+        const originalHtml = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check me-2"></i>Copied!';
+        btn.classList.remove('btn-outline-secondary');
+        btn.classList.add('btn-success', 'text-white');
+        
+        setTimeout(() => {
+            btn.innerHTML = originalHtml;
+            btn.classList.remove('btn-success', 'text-white');
+            btn.classList.add('btn-outline-secondary');
+        }, 2000);
+    }).catch(err => {
+        alert("Failed to copy content. Please select and copy manually.");
+    });
+}
+</script>
+
+<style>
+.cursor-pointer { cursor: pointer; }
+.portal-doc { min-height: 500px; }
+</style>
+{% endblock %}

@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-4 mt-4 fade-in">
+    <div class="row">
+        <!-- Sidebar Navigation (mimicking the friend's project portal) -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="position-sticky" style="top: 100px;">
+                <h6 class="text-primary fw-bold text-uppercase tracking-wide mb-4">Project Portal</h6>
+                <nav class="nav flex-column gap-3">
+                    <a class="nav-link text-dark fw-bold px-0" href="#overview">1. Executive Overview</a>
+                    <a class="nav-link text-muted px-0" href="#data-dict">Dataset Schema</a>
+                    <a class="nav-link text-dark fw-bold px-0 mt-3" href="#pipeline">2. Pipeline Design</a>
+                    <a class="nav-link text-muted px-0" href="#preprocessing">Preprocessing Logic</a>
+                    <a class="nav-link text-dark fw-bold px-0 mt-3" href="#team">3. Collaborators</a>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="col-lg-9">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h3 class="mb-1">System Documentation & Specifications</h3>
+                    <p class="text-muted small mb-0">Comprehensive overview of the datasets, data pre-processing logic, and model heuristics.</p>
+                </div>
+            </div>
+
+            <div id="overview" class="bento-card mb-4">
+                <h5 class="fw-bold text-primary mb-3">1. Executive Overview</h5>
+                <p class="text-muted small lh-lg mb-0">
+                    The Human Development Index (HDI) was created by the UNDP to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. This project builds a highly optimized predictive model using historical data to automatically calculate HDI profiles from core health, education, and economic indicators.
+                </p>
+            </div>
+
+            <div id="data-dict" class="bento-card mb-4">
+                <h5 class="fw-bold text-primary mb-3">2. Dataset Schema & Dictionary</h5>
+                <div class="table-responsive">
+                    <table class="table table-borderless table-sm">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Feature Name</th>
+                                <th>Data Type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody class="small text-muted">
+                            <tr>
+                                <td>Health</td>
+                                <td class="fw-bold text-dark">Life Expectancy</td>
+                                <td>Continuous</td>
+                                <td>Average life expectancy at birth.</td>
+                            </tr>
+                            <tr>
+                                <td>Education</td>
+                                <td class="fw-bold text-dark">Expected Schooling</td>
+                                <td>Continuous</td>
+                                <td>Expected years of schooling for children.</td>
+                            </tr>
+                            <tr>
+                                <td>Education</td>
+                                <td class="fw-bold text-dark">Mean Schooling</td>
+                                <td>Continuous</td>
+                                <td>Mean years of schooling for adults.</td>
+                            </tr>
+                            <tr>
+                                <td>Economy</td>
+                                <td class="fw-bold text-dark">GNI Per Capita</td>
+                                <td>Continuous</td>
+                                <td>Gross National Income (PPP $).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="preprocessing" class="bento-card mb-4">
+                <h5 class="fw-bold text-primary mb-3">3. Preprocessing & Feature Engineering</h5>
+                <ul class="text-muted small lh-lg mb-0 ps-3">
+                    <li><strong>Missing Value Imputation:</strong> Dropped incomplete historical records using deterministic constraints to ensure highest quality training samples.</li>
+                    <li><strong>Income Normalization:</strong> Applied a natural logarithmic transformation (`np.log()`) to Gross National Income to correct for exponential skewness present in real-world wealth distributions.</li>
+                    <li><strong>Target Labels:</strong> The HDI target is synthesized based on geometric means. No standard scaling was required since Linear Regression natively learns the optimal coefficients for unscaled components.</li>
+                </ul>
+            </div>
+
+            <div id="team" class="bento-card mb-4">
+                <h5 class="fw-bold text-primary mb-3">4. Development Team</h5>
+                <div class="row g-4 mt-1">
+                    <div class="col-md-6 d-flex align-items-center gap-3">
+                        <div class="bg-success bg-opacity-25 text-success rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width:40px;height:40px;">SAB</div>
+                        <div>
+                            <div class="fw-bold text-dark small">Sai Archana Bokkasam</div>
+                            <div class="text-muted small">bokkasamarchana27@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-center gap-3">
+                        <div class="bg-info bg-opacity-25 text-info rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width:40px;height:40px;">SN</div>
+                        <div>
+                            <div class="fw-bold text-dark small">Syed Naseer</div>
+                            <div class="text-muted small">itsnaseersyed@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-center gap-3">
+                        <div class="bg-primary bg-opacity-25 text-primary rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width:40px;height:40px;">KR</div>
+                        <div>
+                            <div class="fw-bold text-dark small">Koneti Rupesh</div>
+                            <div class="text-muted small">k.rocklee3230@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-center gap-3">
+                        <div class="bg-warning bg-opacity-25 text-warning rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width:40px;height:40px;">IK</div>
+                        <div>
+                            <div class="fw-bold text-dark small">Irfan Khan</div>
+                            <div class="text-muted small">pikhan552@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-center gap-3">
+                        <div class="bg-danger bg-opacity-25 text-danger rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width:40px;height:40px;">YM</div>
+                        <div>
+                            <div class="fw-bold text-dark small">Yengala Manjula</div>
+                            <div class="text-muted small">ymanjula2904@gmail.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-4 mt-4 fade-in">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="bento-card">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="mb-0">Predictor Form</h3>
+                </div>
+
+                {% if error %}
+                <div class="alert alert-danger alert-dismissible fade show border-0 rounded-3 small" role="alert">
+                    <i class="fa-solid fa-circle-exclamation me-2"></i> {{ error }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endif %}
+
+                <form id="predictForm" action="{{ url_for('predict') }}" method="POST" class="needs-validation mt-2" novalidate>
+                    
+                    <div class="mb-4">
+                        <label for="country_select" class="form-label fw-bold text-primary"><i class="fa-solid fa-earth-americas me-2"></i>Autofill with Real Country Data (Optional)</label>
+                        <select class="form-select" id="country_select">
+                            <option value="">Custom / Manual Entry</option>
+                            <!-- Options populated by JS -->
+                        </select>
+                        <div class="form-text small">Select a country to load its most recent historical data, or leave as custom to enter your own.</div>
+                    </div>
+
+                    <div class="row g-4 mb-4">
+                        <!-- Life Expectancy -->
+                        <div class="col-md-6">
+                            <label for="life_expectancy" class="form-label">Life Expectancy (Years)</label>
+                            <input type="number" step="0.1" class="form-control" id="life_expectancy" name="life_expectancy" placeholder="e.g. 72.5" required min="20" max="100">
+                            <div class="invalid-feedback small">Valid range: 20-100.</div>
+                        </div>
+
+                        <!-- Expected Years of Schooling -->
+                        <div class="col-md-6">
+                            <label for="expec_yr_school" class="form-label">Expected Schooling (Years)</label>
+                            <input type="number" step="0.1" class="form-control" id="expec_yr_school" name="expec_yr_school" placeholder="e.g. 15.2" required min="0" max="25">
+                            <div class="invalid-feedback small">Valid range: 0-25.</div>
+                        </div>
+
+                        <!-- Mean Years of Schooling -->
+                        <div class="col-md-6">
+                            <label for="mean_yr_school" class="form-label">Mean Schooling (Years)</label>
+                            <input type="number" step="0.1" class="form-control" id="mean_yr_school" name="mean_yr_school" placeholder="e.g. 10.5" required min="0" max="20">
+                            <div class="invalid-feedback small">Valid range: 0-20.</div>
+                        </div>
+
+                        <!-- GNI Per Capita -->
+                        <div class="col-md-6">
+                            <label for="gross_inc_percap" class="form-label">GNI Per Capita ($)</label>
+                            <input type="number" step="1" class="form-control" id="gross_inc_percap" name="gross_inc_percap" placeholder="e.g. 18500" required min="100" max="200000">
+                            <div class="invalid-feedback small">Valid range: $100+.</div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-3 mt-2 submit-btn position-relative rounded-sm">
+                        <span class="btn-text">Submit Application</span>
+                        <span class="spinner-border spinner-border-sm position-absolute top-50 start-50 translate-middle d-none loader" role="status" aria-hidden="true"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const countrySelect = document.getElementById('country_select');
+    let countryData = {};
+
+    // Fetch the country data JSON
+    fetch("{{ url_for('static', filename='data/country_data.json') }}")
+        .then(response => response.json())
+        .then(data => {
+            countryData = data;
+            
+            // Populate the dropdown alphabetically
+            const countries = Object.keys(countryData).sort();
+            countries.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country;
+                option.textContent = country;
+                countrySelect.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error loading country data:', error));
+
+    // Handle dropdown change event
+    countrySelect.addEventListener('change', function() {
+        const selectedCountry = this.value;
+        if (selectedCountry && countryData[selectedCountry]) {
+            const data = countryData[selectedCountry];
+            document.getElementById('life_expectancy').value = data.life_expectancy;
+            document.getElementById('expec_yr_school').value = data.expec_yr_school;
+            document.getElementById('mean_yr_school').value = data.mean_yr_school;
+            document.getElementById('gross_inc_percap').value = data.gross_inc_percap;
+        } else {
+            // Clear fields if "Custom" is selected
+            document.getElementById('life_expectancy').value = '';
+            document.getElementById('expec_yr_school').value = '';
+            document.getElementById('mean_yr_school').value = '';
+            document.getElementById('gross_inc_percap').value = '';
+        }
+    });
+});
+</script>
+{% endblock %}

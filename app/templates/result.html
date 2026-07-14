@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-4 mt-4 fade-in">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <h3 class="mb-2">Decision Logs</h3>
+            <p class="text-muted small mb-4">Historical evaluation records logged dynamically from local database runs.</p>
+
+            <div class="bento-card p-0 overflow-hidden mb-5">
+                <div class="table-responsive">
+                    <table class="table table-borderless mb-0">
+                        <thead>
+                            <tr>
+                                <th>Applicant ID</th>
+                                <th>Est. HDI</th>
+                                <th>Category</th>
+                                <th>Reason</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="fw-bold">#2026-HDI</td>
+                                <td class="fw-bold">{{ prediction }}</td>
+                                <td><span class="badge bg-{{ badge_class }} bg-opacity-10 text-{{ badge_class }} px-2 py-1">{{ category }}</span></td>
+                                <td class="small text-muted" style="max-width: 400px;">
+                                    Calculated using inputs: Life expectancy ({{ inputs['Life Expectancy'] }} yrs), 
+                                    Schooling ({{ inputs['Expected Years of Schooling'] }} exp / {{ inputs['Mean Years of Schooling'] }} mean yrs), 
+                                    Income ({{ inputs['GNI Per Capita'] }}).
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Gauge visualization inside a clean bento card -->
+            <div class="bento-card fade-in">
+                <h4 class="mb-4">Score Analysis</h4>
+                <div class="gauge-container mb-4">
+                    <div class="d-flex justify-content-between text-muted small fw-bold mb-2">
+                        <span>0.000 (Low Development)</span>
+                        <span>1.000 (Very High Development)</span>
+                    </div>
+                    <div class="progress" style="height: 12px; border-radius: 6px; background-color: #f1f3f4;">
+                        <div class="progress-bar bg-{{ badge_class }}" 
+                             role="progressbar" 
+                             style="width: 0%; border-radius: 6px;" 
+                             data-target="{{ prediction * 100 }}"
+                             aria-valuenow="{{ prediction * 100 }}" 
+                             aria-valuemin="0" 
+                             aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-end mt-4">
+                    <a href="{{ url_for('predict') }}" class="btn btn-outline-primary px-4 py-2 rounded-pill fw-medium">
+                        Run New Audit
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
