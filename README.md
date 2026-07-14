@@ -132,17 +132,7 @@ This repository is pre-configured for PaaS deployments via the included `Procfil
 
 ---
 
-## 👥 Development Team
 
-| Name | Role | Email |
-|---|---|---|
-| **Sai Archana Bokkasam** | Machine Learning Engineer | bokkasamarchana27@gmail.com |
-| **Syed Naseer** | Machine Learning Engineer | itsnaseersyed@gmail.com |
-| **Koneti Rupesh** | Machine Learning Engineer | k.rocklee3230@gmail.com |
-| **Irfan Khan** | Machine Learning Engineer | pikhan552@gmail.com |
-| **Yengala Manjula** | Machine Learning Engineer | ymanjula2904@gmail.com |
-
----
 
 ## 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
